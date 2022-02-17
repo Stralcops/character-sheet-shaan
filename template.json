@@ -1,0 +1,102 @@
+{
+  "Actor": {
+    "types": ["Joueur", "PNJ", "Ennemi"],
+    "templates": {
+      "base": {
+        "name": {
+          "value": ""
+        },  
+        "race": {
+          "value": ""
+        },
+        "age": {
+          "value": 0
+        },
+        "pauple": {"value":""},
+        "sexe": { "value": "" },
+        "caste": { "value": "" },
+        "metier": { "value": "" },
+        "esprit": {
+          "value": 10,
+          "min": 0,
+          "max": 10
+        },
+        "ame": {
+          "value": 5,
+          "min": 0,
+          "max": 5
+        },
+        "corps": {
+          "value": 5,
+          "min": 0,
+          "max": 5
+        },
+        "technique": {
+          "value": 10
+        },
+        "savoir": {
+          "value": 10
+        },
+        "social": {
+          "value": 10
+        },
+        "arts": {
+          "value": 10
+        },
+        "shaan": {
+          "value": 10
+        },
+        "magie": {
+          "value": 10
+        },
+        "rituels": {
+          "value": 10
+        },
+        "survie": {
+          "value": 10
+        },
+        "combat": {
+          "value": 10
+        },
+        "necrose": {
+          "value": 10
+        },
+        "Description": ""
+      }
+    },
+    "joueur": {
+      "templates": ["base"],
+      "attributes": {
+        "level": {
+          "value": 1
+        }
+      },
+      "abilities": {}
+    },
+    "PNJ": {
+      "templates": ["base"],
+      "cr": 0
+    }
+  },
+  "Item": {
+    "types": ["item", "feature", "spell"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0,
+      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+    },
+    "feature": {
+      "templates": ["base"]
+    },
+    "spell": {
+      "templates": ["base"],
+      "spellLevel": 1
+    }
+  }
+}

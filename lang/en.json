@@ -1,0 +1,22 @@
+{
+  "SHAAN.AbilityStr": "Strength",
+  "SHAAN.AbilityCon": "Constitution",
+  "SHAAN.AbilityDex": "Dexterity",
+  "SHAAN.AbilityInt": "Intelligence",
+  "SHAAN.AbilityWis": "Wisdom",
+  "SHAAN.AbilityCha": "Charisma",
+
+  "SHAAN.AbilityStrAbbr": "str",
+  "SHAAN.AbilityConAbbr": "con",
+  "SHAAN.AbilityDexAbbr": "dex",
+  "SHAAN.AbilityIntAbbr": "int",
+  "SHAAN.AbilityWisAbbr": "wis",
+  "SHAAN.AbilityChaAbbr": "cha",
+
+  "SHAAN.EffectCreate": "Create Effect",
+  "SHAAN.EffectToggle": "Toggle Effect",
+  "SHAAN.EffectEdit": "Edit Effect",
+  "SHAAN.EffectDelete": "Delete Effect",
+
+  "SHAAN.Add": "Add"
+}
