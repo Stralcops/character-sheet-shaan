@@ -1,0 +1,129 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.main {
+  margin: 20px
+}
+
+/* header */
+.image-profile {
+  height: 120px;
+  width: 120px;
+  border: solid 2px #919191;
+
+}
+
+/* attributs */
+.circle-shaan {
+  background-image: url('./assets/cercle.png');
+  height: 800px;
+  width: 800px;
+  background-position: left;
+  background-size: contain;
+}
+
+.attribut-circle {
+  /* border: 1px dashed blue; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.attribut-point {
+  /* border: 1px dashed rgb(61, 61, 255); */
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+#circle-shaan .attribut-point input {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 10px;
+  border:none;
+}
+#circle-shaan .attribut-point input:focus {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 10px;
+  border:none;
+}
+
+.attribut-arts {
+  top: 83px;
+  left: 199px;
+}
+
+.attribut-shaan {
+  top: 35px;
+  left: 376px;
+}
+
+.attribut-magie {
+  top: 85px;
+  left: 545px;
+}
+
+.attribut-social {
+  top: 263px;
+  left: 55px;
+}
+
+.attribut-savoir {
+  top: 448px;
+  left: 56px;
+}
+
+.attribut-technique {
+  top: 602px;
+  left: 147px;
+}
+
+.attribut-rituels {
+  top: 262px;
+  left: 683px;
+}
+
+.attribut-survie {
+  top: 450px;
+  left: 685px;
+}
+
+.attribut-combat {
+  top: 598px;
+  left: 592px;
+}
+
+.attribut-necrose {
+  top: 685px;
+  left: 372px;
+}
+
+.trine-ame {
+  top: 310px;
+  left: 326px;
+}
+
+.trine-esprit {
+  top: 423px;
+  left: 237px;
+}
+
+.trine-corps {
+  top: 468px;
+  left: 388px;
+}
