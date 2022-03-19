@@ -1,9 +1,9 @@
 // Import document classes.
-import { shaanActor } from "./documents/actor.mjs";
-import { shaanItem } from "./documents/item.mjs";
+import { ShaanActor } from "./documents/actor.mjs";
+import { ShaanItem } from "./documents/item.mjs";
 // Import sheet classes.
-import { shaanActorSheet } from "./sheets/actor-sheet.mjs";
-import { shaanItemSheet } from "./sheets/item-sheet.mjs";
+import { ShaanActorSheet } from "./sheets/actor-sheet.mjs";
+import { ShaanItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { SHAAN } from "./helpers/config.mjs";
@@ -16,9 +16,9 @@ Hooks.once('init', async function() {
 
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.Shaan = {
-    shaanActor,
-    shaanItem,
+  game.shaan = {
+    ShaanActor,
+    ShaanItem,
     rollItemMacro
   };
 
@@ -35,14 +35,14 @@ Hooks.once('init', async function() {
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = shaanActor;
-  CONFIG.Item.documentClass = shaanItem;
+  CONFIG.Actor.documentClass = ShaanActor;
+  CONFIG.Item.documentClass = ShaanItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("Shaan", shaanActorSheet, { makeDefault: true });
+  Actors.registerSheet("shaan", ShaanActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("Shaan", shaanItemSheet, { makeDefault: true });
+  Items.registerSheet("shaan", ShaanItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
@@ -93,7 +93,7 @@ async function createItemMacro(data, slot) {
   const item = data.data;
 
   // Create the macro command
-  const command = `game.Shaan.rollItemMacro("${item.name}");`;
+  const command = `game.shaan.rollItemMacro("${item.name}");`;
   let macro = game.macros.find(m => (m.name === item.name) && (m.command === command));
   if (!macro) {
     macro = await Macro.create({
@@ -101,7 +101,7 @@ async function createItemMacro(data, slot) {
       type: "script",
       img: item.img,
       command: command,
-      flags: { "Shaan.itemMacro": true }
+      flags: { "shaan.itemMacro": true }
     });
   }
   game.user.assignHotbarMacro(macro, slot);

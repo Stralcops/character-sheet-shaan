@@ -2,12 +2,12 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class shaanItemSheet extends ItemSheet {
+export class ShaanItemSheet extends ItemSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["Shaan", "sheet", "item"],
+      classes: ["shaan", "sheet", "item"],
       width: 520,
       height: 480,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -16,7 +16,7 @@ export class shaanItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/Shaan/templates/item";
+    const path = "systems/shaan/templates/item";
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.html`;
 

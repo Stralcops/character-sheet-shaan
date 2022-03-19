@@ -7,9 +7,9 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/Shaan/templates/actor/parts/actor-features.html",
-    "systems/Shaan/templates/actor/parts/actor-items.html",
-    "systems/Shaan/templates/actor/parts/actor-spells.html",
-    "systems/Shaan/templates/actor/parts/actor-effects.html",
+    "systems/shaan/templates/actor/parts/actor-features.html",
+    "systems/shaan/templates/actor/parts/actor-items.html",
+    "systems/shaan/templates/actor/parts/actor-spells.html",
+    "systems/shaan/templates/actor/parts/actor-effects.html",
   ]);
 };

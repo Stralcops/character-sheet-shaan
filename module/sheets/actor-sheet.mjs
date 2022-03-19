@@ -4,13 +4,13 @@ import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/ef
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class shaanActorSheet extends ActorSheet {
+export class ShaanActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["Shaan", "sheet", "actor"],
-      template: "systems/Shaan/templates/actor/actor-sheet.html",
+      classes: ["shaan", "sheet", "actor"],
+      template: "systems/shaan/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -19,7 +19,7 @@ export class shaanActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/Shaan/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/shaan/templates/actor/actor-${this.actor.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -40,13 +40,13 @@ export class shaanActorSheet extends ActorSheet {
     context.flags = actorData.flags;
 
     // Prepare character data and items.
-    if (actorData.type == 'Joueur') {
+    if (actorData.type == 'character') {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == 'PNJ') {
+    if (actorData.type == 'npc') {
       this._prepareItems(context);
     }
 

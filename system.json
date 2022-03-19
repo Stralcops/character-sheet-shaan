@@ -1,13 +1,13 @@
 {
-  "name": "Shaan",
+  "name": "shaan",
   "title": "Shaan : Renaissance",
   "description": "The Shaan : Renaissance system for FoundryVTT!",
   "version": "1.0.0",
   "minimumCoreVersion": "0.8.6",
   "compatibleCoreVersion": "9",
   "author": "Antoine MILOUX",
-  "esmodules": ["module/Shaan.mjs"],
-  "styles": ["css/Shaan.css", "css/materialize.css"],
+  "esmodules": ["module/shaan.mjs"],
+  "styles": ["css/shaan.css"],
   "scripts": [],
   "packs": [],
   "languages": [
