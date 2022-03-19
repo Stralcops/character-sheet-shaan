@@ -7,7 +7,7 @@
   "compatibleCoreVersion": "9",
   "author": "Antoine MILOUX",
   "esmodules": ["module/shaan.mjs"],
-  "styles": ["css/shaan.css"],
+  "styles": ["css/shaan.css", "css/materialize.css"],
   "scripts": [],
   "packs": [],
   "languages": [
