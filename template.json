@@ -1,73 +1,224 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types"    : ["character", "npc"],
     "templates": {
       "base": {
         "health": {
           "value": 10,
-          "min": 0,
-          "max": 10
+          "min"  : 0,
+          "max"  : 10
         },
         "power": {
           "value": 5,
-          "min": 0,
-          "max": 5
+          "min"  : 0,
+          "max"  : 5
         },
-        "biography": ""
+        "biography": "",
+        "stats"    : {
+          "ame": {
+            "arts": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0
+            },
+            "shaan": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0
+            },
+            "magie": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0
+            }
+          },
+          "corps": {
+            "combat": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0
+            },
+            "survie": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0
+            },
+            "rituel": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0
+            }
+          },
+          "esprit": {
+            "social": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0
+            },
+            "savoir": {
+              "value": 0,
+              "min"  : 0,
+              "max"  : 0,
+              "label": "Savoir",
+
+              "skills": {
+                "alchimie": {
+                  "label": "Alchimie",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "bibliotheque": {
+                  "label": "Bibliothèque",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "botanique": {
+                  "label": "Botaïque",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "cultureHumaine": {
+                  "label": "Culture humaine",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "esoterisme": {
+                  "label": "Esoterisme",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "geologie": {
+                  "label": "Géologie",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "histoireDheos": {
+                  "label": "Histoire d'Héos",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "medecine": {
+                  "label": "Médecine",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "protocoles": {
+                  "label": "Protocoles",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "zoologie": {
+                  "label": "Zoologie",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                }
+              }
+            },
+            "technique": {
+              "value" : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Téchnique",
+              "skills": {
+                "engrenages": {
+                  "label": "Engrenange",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "pilotage": {
+                  "label": "Pilotage",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "recuperation": {
+                  "label": "Recuperation",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "sensDeLaPierre": {
+                  "label": "Sens de la pierre",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "sensDuBois": {
+                  "label": "Sens du bois",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "sensDuCuir": {
+                  "label": "Sens du cuir",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "sensDuMetal": {
+                  "label": "Sens du métal",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "sensDuVerre": {
+                  "label": "Sens du verre",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                },
+                "technologie": {
+                  "label": "Technologie",
+                  "value": 0,
+                  "min"  : 0,
+                  "max"  : 0
+                }
+              }
+            }
+          }
+          
+        }
       }
     },
     "character": {
-      "templates": ["base"],
+      "templates" : ["base"],
       "attributes": {
         "level": {
           "value": 1
-        }
-      },
-      "abilities": {
-        "str": {
-          "value": 10
-        },
-        "dex": {
-          "value": 10
-        },
-        "con": {
-          "value": 10
-        },
-        "int": {
-          "value": 10
-        },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
         }
       }
     },
     "npc": {
       "templates": ["base"],
-      "cr": 0
-    }
-  },
-  "Item": {
-    "types": ["item", "feature", "spell"],
-    "templates": {
-      "base": {
-        "description": ""
+      "cr"       : 0
+    },
+    "Item": {
+      "types"    : ["item", "feature"],
+      "templates": {
+        "base": {
+          "description": ""
+        }
+      },
+      "item": {
+        "templates": ["base"],
+        "quantity" : 1,
+        "weight"   : 0,
+        "formula"  : "d20 + @str.mod + ceil(@lvl / 2)"
+      },
+      "feature": {
+        "templates": ["base"]
       }
-    },
-    "item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
-    },
-    "feature": {
-      "templates": ["base"]
-    },
-    "spell": {
-      "templates": ["base"],
-      "spellLevel": 1
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "shaan",
   "version": "1.0.0",
-  "description": "CSS compiler for the Shaan : Renaissance system",
+  "description": "CSS compiler for the Shaan system",
   "scripts": {
     "build": "gulp build",
     "compile": "gulp css",

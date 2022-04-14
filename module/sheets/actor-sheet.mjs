@@ -13,7 +13,7 @@ export class ShaanActorSheet extends ActorSheet {
       template: "systems/shaan/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }]
     });
   }
 
@@ -67,10 +67,6 @@ export class ShaanActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
-    // Handle ability scores.
-    for (let [k, v] of Object.entries(context.data.abilities)) {
-      v.label = game.i18n.localize(CONFIG.SHAAN.abilities[k]) ?? k;
-    }
   }
 
   /**
@@ -84,18 +80,6 @@ export class ShaanActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -108,18 +92,11 @@ export class ShaanActorSheet extends ActorSheet {
       else if (i.type === 'feature') {
         features.push(i);
       }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.data.spellLevel != undefined) {
-          spells[i.data.spellLevel].push(i);
-        }
-      }
     }
 
     // Assign and return
     context.gear = gear;
     context.features = features;
-    context.spells = spells;
    }
 
   /* -------------------------------------------- */
@@ -155,7 +132,8 @@ export class ShaanActorSheet extends ActorSheet {
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
-
+    
+    
     // Drag events for macros.
     if (this.actor.owner) {
       let handler = ev => this._onDragStart(ev);

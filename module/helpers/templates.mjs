@@ -8,8 +8,8 @@
 
     // Actor partials.
     "systems/shaan/templates/actor/parts/actor-features.html",
+    "systems/shaan/templates/actor/parts/actor-skills.html",
     "systems/shaan/templates/actor/parts/actor-items.html",
-    "systems/shaan/templates/actor/parts/actor-spells.html",
     "systems/shaan/templates/actor/parts/actor-effects.html",
   ]);
 };
