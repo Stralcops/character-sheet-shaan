@@ -21,10 +21,10 @@
     {{/each}}
   {{/each}}
 </ol> -->
-
+<div class="flex-between stats" >
 {{#each data.stats as |stat id|}}
 {{#each stat as |skill id|}}
-<table>
+<table class="col-md-3 p-5" style="background-color:{{stat.color}}">
   <thead>
     <tr>
       <th>{{skill.label}}</th>
@@ -56,3 +56,4 @@
 
 {{/each}}
 
+</div>

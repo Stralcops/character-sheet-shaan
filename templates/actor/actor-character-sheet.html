@@ -1,110 +1,125 @@
-<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
-
-  {{!-- Sheet Header --}}
-  <header class="sheet-header">
-    <!-- <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/> -->
-    <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-      {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-      use both the "grid" and "grid-Ncol" class where "N" can be any number
-      from 1 to 12 and will create that number of columns.  --}}
-      <div class="resources grid grid-3col">
-
-        {{!-- "flex-group-center" is also defined in the _grid.scss file
-        and it will add a small amount of padding, a border, and will
-        center all of its child elements content and text. --}}
-        <div class="resource flex-group-center">
-          <label for="data.health.value" class="resource-label">Health</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="data.power.value" class="resource-label">Power</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.power.value" value="{{data.power.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="data.power.max" value="{{data.power.max}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="data.level.value" class="resource-label">Level</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.level.value" value="{{data.level.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-
+<form id="shaan" class="{{cssClass}} {{actor.type}} main" autocomplete="off">
+  <div id="shaan" class="main">
+    <div class="row">
+      <div class="col s2">
+        <div class="col image-profile"></div>
       </div>
-      <h3>Âme</h3>
-      <div class="resources grid grid-3col">
-        <div class="resource flex-group-center">
-          <label for="data.stats.ame.arts.value" class="resource-label">Arts</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.stats.ame.arts.value" value="{{data.stats.ame.arts.value}}" data-dtype="Number"/>
+
+      <div class="col s10">
+        <div class="row">
+          <div class="input-field  row v-align">
+            <label for="name">Nom : </label>
+            <input type="text" name="name" value="{{actor.name}}" />
           </div>
         </div>
-        <div class="resource flex-group-center">
-          <label for="data.stats.ame.shaan.value" class="resource-label">Shaan</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.stats.ame.shaan.value" value="{{data.stats.ame.shaan.value}}" data-dtype="Number"/>
+        <div class="divider"></div>
+
+        <div class="row">
+          <div class="row">
+            <label for="name">Réserve : </label>
+            <input type="number" placeholder="Réserve" />
           </div>
-        </div>
-        <div class="resource flex-group-center">
-          <label for="data.stats.ame.magie.value" class="resource-label">Magie</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.stats.ame.magie.value" value="{{data.stats.ame.magie.value}}" data-dtype="Number"/>
+
+          <div class="row">
+            <label for="name">Experience : </label>
+            <input type="number" placeholder="Experience" />
           </div>
-        </div>
-      </div>
-      <h3>Corps</h3>
-      <div class="resources grid grid-3col">
-        <div class="resource flex-group-center">
-          <label for="data.stats.corps.combat.value" class="resource-label">Combat</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="data.stats.corps.combat.value" value="{{data.stats.corps.combat.value}}" data-dtype="Number"/>
+          <div class="row">
+            <label for="name">Préstige : </label>
+            <input type="number" placeholder="Préstige" />
           </div>
-        </div>
-        <div class="resource flex-group-center">
-          <label for="data.stats.corps.survie.value" class="resource-label">Survie</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="data.stats.corps.survie.value" value="{{data.stats.corps.survie.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-        <div class="resource flex-group-center">
-          <label for="data.stats.corps.rituel.value" class="resource-label">Rituel</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="data.stats.corps.rituel.value" value="{{data.stats.corps.rituel.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-      </div>
-      <h3>Esprit</h3>
-      <div class="resources grid grid-3col">
-        <div class="resource flex-group-center">
-          <label for="data.stats.esprit.social.value" class="resource-label">Social</label>
-          <span class="ability-mod rollable" data-roll="d20+{{data.stats.esprit.social.value}}" data-label="social">Dé</span>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="data.stats.esprit.social.value" value="{{data.stats.esprit.social.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-        <div class="resource flex-group-center">
-          <label for="data.stats.esprit.savoir.value" class="resource-label">Savoir</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="data.stats.esprit.savoir.value" value="{{data.stats.esprit.savoir.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-        <div class="resource flex-group-center">
-          <label for="data.stats.esprit.technique.value" class="resource-label">Technique</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="data.stats.esprit.technique.value" value="{{data.stats.esprit.technique.value}}" data-dtype="Number"/>
-          </div>
+          <!-- <div class="col s3">
+              <input type="number" placeholder="Caste" />
+            </div> -->
         </div>
       </div>
     </div>
-  </header>
+  </div>
+
+  <!-- cercle shaan -->
+  <div id="circle-shaan" class="circle-shaan">
+    <div class="row attribut-circle">
+      <!--âme-->
+
+      <div class="attribut-point attribut-arts">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-arts current ">
+        <input type="number" class="bb_blue" value="1" />
+      </div>
+      <div class="attribut-point attribut-shaan">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-shaan current ">
+        <input type="number" class="bb_blue" value="1" />
+      </div>
+      <div class="attribut-point attribut-magie">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-magie current ">
+        <input type="number" class="bb_blue" value="1" />
+      </div>
+      <!--esprit-->
+
+      <div class="attribut-point attribut-social">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-social current ">
+        <input type="number" class="bb_yellow" value="1" />
+      </div>
+      <div class="attribut-point attribut-savoir">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-savoir current ">
+        <input type="number" class="bb_yellow" value="1" />
+      </div>
+      <div class="attribut-point attribut-technique">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-technique current ">
+        <input type="number" class="bb_yellow" value="1" />
+      </div>
+
+      <!--corps-->
+      <div class="attribut-point attribut-rituels">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-rituels current ">
+        <input type="number" class="bb_red" value="1" />
+      </div>
+      <div class="attribut-point attribut-survie">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-survie current ">
+        <input type="number" class="bb_red" value="1" />
+      </div>
+      <div class="attribut-point attribut-combat">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-combat current ">
+        <input type="number" class="bb_red" value="1" />
+      </div>
+      <!--necrose-->
+      <div class="attribut-point attribut-necrose">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point attribut-necrose current ">
+        <input type="number" class="bb_black" value="1" />
+      </div>
+      <!--trines-->
+      <div class="attribut-point trine-ame">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point trine-esprit">
+        <input type="number" value="0" />
+      </div>
+      <div class="attribut-point trine-corps">
+        <input type="number" value="0" />
+      </div>
+      <!--necrose-->
+    </div>
+  </div>
+  <!-- /cercle shaan -->
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
@@ -118,52 +133,50 @@
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-
     <div class="tab skills" data-group="primary" data-tab="skills">
       <section class="grid grid-12-col">
         {{!-- For the main skills list, span the right two columns --}}
         <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/shaan/templates/actor/parts/actor-skills.html"}}
+          {{!-- This is a Handlebars partial. They're stored in the `/parts`
+          folder next to this sheet, and defined in module/helpers/templates.mjs
+          --}} {{> "systems/shaan/templates/actor/parts/actor-skills.html"}}
         </section>
-
       </section>
     </div>
     {{!-- Owned features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
       <section class="grid grid-3col">
         <aside class="sidebar">
-
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
+          from 1 to 12 and will create that number of columns. --}}
         </aside>
 
         {{!-- For the main features list, span the right two columns --}}
         <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/shaan/templates/actor/parts/actor-features.html"}}
+          {{!-- This is a Handlebars partial. They're stored in the `/parts`
+          folder next to this sheet, and defined in module/helpers/templates.mjs
+          --}} {{> "systems/shaan/templates/actor/parts/actor-features.html"}}
         </section>
-
       </section>
     </div>
 
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor content=data.biography target="data.biography" rollData=rollData button=true owner=owner editable=editable}}
+      {{!-- If you want TinyMCE editors to output inline rolls when rendered,
+      you need to pass the actor's roll data to the rollData property. --}}
+      {{editor content=data.biography target="data.biography" rollData=rollData
+      button=true owner=owner editable=editable}}
     </div>
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/shaan/templates/actor/parts/actor-items.html"}}
+      {{> "systems/shaan/templates/actor/parts/actor-items.html"}}
     </div>
 
     {{!-- Active Effects Tab --}}
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
       {{> "systems/shaan/templates/actor/parts/actor-effects.html"}}
     </div>
-
   </section>
 </form>
-

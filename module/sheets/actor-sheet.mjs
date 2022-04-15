@@ -11,8 +11,8 @@ export class ShaanActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["shaan", "sheet", "actor"],
       template: "systems/shaan/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
+      width: 800,
+      height: 900,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }]
     });
   }
