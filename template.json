@@ -3,6 +3,13 @@
     "types": ["character", "npc"],
     "templates": {
       "base": {
+        "race": { "value": "" },
+        "peuple": { "value": "" },
+        "caste": { "value": "" },
+        "metier": { "value": "" },
+        "age": { "value": 0 },
+        "sexe": { "value": "" },
+
         "health": {
           "value": 10,
           "min": 0,
@@ -218,32 +225,31 @@
                   "min": 0,
                   "max": 0
                 },
-                "langagePrimal" : {
+                "langagePrimal": {
                   "label": "Langage primaire",
                   "value": 0,
                   "min": 0,
                   "max": 0
                 },
-                "languesExotiques" : {
+                "languesExotiques": {
                   "label": "Langues exotiques",
                   "value": 0,
                   "min": 0,
                   "max": 0
                 },
-                "psychologie" : {
+                "psychologie": {
                   "label": "Psychologie",
                   "value": 0,
                   "min": 0,
                   "max": 0
                 },
-                "seduction" : {
-
+                "seduction": {
                   "label": "Séduction",
                   "value": 0,
                   "min": 0,
                   "max": 0
                 },
-                "vieUrbaine" : {
+                "vieUrbaine": {
                   "label": "Vie urbaine",
                   "value": 0,
                   "min": 0,

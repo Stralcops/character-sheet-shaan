@@ -1,182 +1,111 @@
 <form id="shaan" class="{{cssClass}} {{actor.type}} main" autocomplete="off">
-  <div id="shaan" class="main">
-    <div class="row">
-      <div class="col s2">
-        <div class="col image-profile"></div>
-      </div>
+<div class="charactersheet main" style="display: block;">
+  <!-- <input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="Domaines &amp; Spé" title="Domaines &amp; Spé"><span title="Domaines &amp; Spé"></span>
+      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab2" value="Pouvoirs" title="Pouvoirs"><span title="Pouvoirs"></span>
+      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab3" value="Magies" title="Magies">	<span title="Magies"></span>
+      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab4" value="Acquis" title="Acquis"><span title="Acquis"></span>
+      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab5" value="Notes" title="Notes"><span title="Notes"></span>	 -->
 
-      <div class="col s10">
-        <div class="row">
-          <div class="input-field  row v-align">
-            <label for="name">Nom : </label>
-            <input type="text" name="name" value="{{actor.name}}" />
-          </div>
+  <div
+    class="sheet-tab-content"
+    style='background-image: url("https://imgsrv.roll20.net/?src=https%3A//nsm09.casimages.com/img/2019/01/17//1901171158446857316079960.jpg") ; height: 1060px ; width: 1500px ; background-repeat: no-repeat'
+  >
+    <div style="width: 750px">
+      <div style="margin: 0px 0px 0px 220px">
+        <div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nom Personnage"
+            style="margin: 19px 0px 0px 0px ; width: 340px ; height: 24px"
+            value="{{actor.name}}"
+          />
         </div>
-        <div class="divider"></div>
+        <div style="margin: 2px 0 0 0">
+          <select name="data.race.value" data-type="String" style="width: 240px ; height: 24px" value="{{data.race.value}}">
+            {{#select data.race.value}}
+         
+            <option value="">-- Race --</option>
+            <option value="Boreal">Boréal</option>
+            <option value="Darken">Darken</option>
+            <option value="Delhion">Delhion</option>
+            <option value="Felin">Felin</option>
+            <option value="Humain">Humain</option>
+            <option value="Kelwin">Kelwin</option>
+            <option value="Melodien">Mélodien</option>
+            <option value="Nomoi">Nomoï</option>
+            <option value="Woon">Woon</option>
+            <option value="Ygwan">Ygwan</option>
+        {{/select}}
 
-        <div class="row">
-          <div class="row">
-            <label for="name">Réserve : </label>
-            <input type="number" placeholder="Réserve" />
-          </div>
+          </select>
+         
+          <input type="text" name="data.age.value" value="{{data.age.value}}" data-dtype="Number"
+          style="width: 70px ; margin: -5px 0 0 45px ; height: 24px"
+          />
 
-          <div class="row">
-            <label for="name">Experience : </label>
-            <input type="number" placeholder="Experience" />
-          </div>
-          <div class="row">
-            <label for="name">Préstige : </label>
-            <input type="number" placeholder="Préstige" />
-          </div>
-          <!-- <div class="col s3">
-              <input type="number" placeholder="Caste" />
-            </div> -->
+          
+        </div>
+        <div style="margin: -8px 0 0 0">
+          <select
+            name="data.peuple.value"
+            style="width: 180px ; height: 24px ; margin: 0 0 0 14px"
+            value="{{data.peuple.value}}"
+          >
+          {{#select data.peuple.value}}
+
+            <option value="">-- Peuple --</option>
+            <option value="Cites">Cités</option>
+            <option value="Forets_Blanches">Forêts Blanches</option>
+            <option value="Glaces">Glaces</option>
+            <option value="Grands_Arbres">Grands Arbres</option>
+            <option value="Hautes_Herbes">Hautes Herbes</option>
+            <option value="Marais">Marais</option>
+            <option value="Montagne">Montagne</option>
+            <option value="Rivages">Rivages</option>
+            <option value="Sables">Sables</option>
+            <option value="Terres_Brulees">Terres Brûlées</option>
+            {{/select}}
+          </select>
+          <input
+            type="text"
+            name="data.genre.value"
+            placeholder="Genre"
+            style="width: 120px ; height: 24px ; margin: -4px 0 0 45px"
+            value="{{data.genre.value}}"
+          />
+        </div>
+        <div>
+          <select
+            name="data.caste.value"
+            style="width: 130px ; height: 24px ; margin: 0 0 0 8px"
+            value="{{data.caste.value}}"
+          >
+          {{#select data.caste.value}}
+
+            <option value="">-- Caste --</option>
+            <option value="Artiste">Artiste</option>
+            <option value="Combattant">Combattant</option>
+            <option value="Elementaliste">Elémentaliste</option>
+            <option value="Erudit">Erudit</option>
+            <option value="Magicien">Magicien</option>
+            <option value="Negociant">Négociant</option>
+            <option value="Novateur">Novateur</option>
+            <option value="Ombre">Ombre</option>
+            <option value="Shaaniste">Shaaniste</option>
+            <option value="Voyageur">Voyageur</option>
+            {{/select}}
+          </select>
+          <input
+            type="text"
+            name="data.metier.value"
+            placeholder="Métier"
+            style="width: 155px ; margin: -5px 0 0 66px ; height: 24px"
+            value="{{data.metier.value}}"
+          />
         </div>
       </div>
-    </div>
+    
   </div>
-
-  <!-- cercle shaan -->
-  <div id="circle-shaan" class="circle-shaan">
-    <div class="row attribut-circle">
-      <!--âme-->
-
-      <div class="attribut-point attribut-arts">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-arts current ">
-        <input type="number" class="bb_blue" value="1" />
-      </div>
-      <div class="attribut-point attribut-shaan">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-shaan current ">
-        <input type="number" class="bb_blue" value="1" />
-      </div>
-      <div class="attribut-point attribut-magie">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-magie current ">
-        <input type="number" class="bb_blue" value="1" />
-      </div>
-      <!--esprit-->
-
-      <div class="attribut-point attribut-social">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-social current ">
-        <input type="number" class="bb_yellow" value="1" />
-      </div>
-      <div class="attribut-point attribut-savoir">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-savoir current ">
-        <input type="number" class="bb_yellow" value="1" />
-      </div>
-      <div class="attribut-point attribut-technique">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-technique current ">
-        <input type="number" class="bb_yellow" value="1" />
-      </div>
-
-      <!--corps-->
-      <div class="attribut-point attribut-rituels">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-rituels current ">
-        <input type="number" class="bb_red" value="1" />
-      </div>
-      <div class="attribut-point attribut-survie">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-survie current ">
-        <input type="number" class="bb_red" value="1" />
-      </div>
-      <div class="attribut-point attribut-combat">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-combat current ">
-        <input type="number" class="bb_red" value="1" />
-      </div>
-      <!--necrose-->
-      <div class="attribut-point attribut-necrose">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point attribut-necrose current ">
-        <input type="number" class="bb_black" value="1" />
-      </div>
-      <!--trines-->
-      <div class="attribut-point trine-ame">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point trine-esprit">
-        <input type="number" value="0" />
-      </div>
-      <div class="attribut-point trine-corps">
-        <input type="number" value="0" />
-      </div>
-      <!--necrose-->
-    </div>
-  </div>
-  <!-- /cercle shaan -->
-
-  {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="skills">Spécialisations</a>
-    <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="effects">Effects</a>
-  </nav>
-
-  {{!-- Sheet Body --}}
-  <section class="sheet-body">
-    <div class="tab skills" data-group="primary" data-tab="skills">
-      <section class="grid grid-12-col">
-        {{!-- For the main skills list, span the right two columns --}}
-        <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts`
-          folder next to this sheet, and defined in module/helpers/templates.mjs
-          --}} {{> "systems/shaan/templates/actor/parts/actor-skills.html"}}
-        </section>
-      </section>
-    </div>
-    {{!-- Owned features Tab --}}
-    <div class="tab features" data-group="primary" data-tab="features">
-      <section class="grid grid-3col">
-        <aside class="sidebar">
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns. --}}
-        </aside>
-
-        {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts`
-          folder next to this sheet, and defined in module/helpers/templates.mjs
-          --}} {{> "systems/shaan/templates/actor/parts/actor-features.html"}}
-        </section>
-      </section>
-    </div>
-
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered,
-      you need to pass the actor's roll data to the rollData property. --}}
-      {{editor content=data.biography target="data.biography" rollData=rollData
-      button=true owner=owner editable=editable}}
-    </div>
-
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-      {{> "systems/shaan/templates/actor/parts/actor-items.html"}}
-    </div>
-
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/shaan/templates/actor/parts/actor-effects.html"}}
-    </div>
-  </section>
+</div>
 </form>

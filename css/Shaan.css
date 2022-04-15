@@ -1,717 +1,2704 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-/* Global styles */
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-#shaan {
-  zoom: 0.9;
-}
-.row{
-  display: flex;
-  margin: 5px 10px 5px 10px;
-}
-
-.space-around {
-  justify-content: space-around;
-}
- .icon-block {
-  padding: 0 15px;
-}
-
-.icon-block .material-icons {
-  font-size: inherit;
-}
-.stats{
-  width: 130%;
-}
-#circle-shaan .bb_blue{
-  border-bottom: 2px solid #6693b9 ;
-}
-
-#circle-shaan .bb_yellow{
-  border-bottom: 2px solid #bc9b69 ;
-}
-
-#circle-shaan .bb_red{
-  border-bottom: 2px solid #ca6d54 ;
-}
-#circle-shaan .bb_black{
-  border-bottom: 2px solid #6c6e6d ;
+.charsheet{
+	font-family: "Times New Roman", Times, serif;
+	font-variant: small-caps;
+	background:none;
 }
 
 
-.main {
-  margin: 20px;
+.charsheet div.sheet-tab-content { display: none; }
+.charsheet input.sheet-tab1:checked ~ div.sheet-tab1,.charsheet input.sheet-tab2:checked ~ div.sheet-tab2,.charsheet input.sheet-tab3:checked ~ div.sheet-tab3,.charsheet input.sheet-tab4:checked ~ div.sheet-tab4,.charsheet input.sheet-tab5:checked ~ div.sheet-tab5
+
+{
+    display:block;
+}
+
+.charsheet input.sheet-tab{
+    width: 150px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -1.5px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+}
+
+.charsheet input.sheet-tab + span::before {
+    content: attr(title);
+    border: solid 1px #a8a8a8;
+    border-bottom-color: black;
+    text-align: center;
+    display: inline-block;
+    background: #fff;
+    background: linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
+    width: 150px;
+    height: 20px;
+    font-size: 18px;
+    top: 12px;
+    margin-left: -150px;
+}
+
+.charsheet input.sheet-tab:checked + span::before {
+    background: #dcdcdc;
+    background: -moz-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: -webkit-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: -ms-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: -o-linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    background: linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    border-bottom-color: #fff;
+}
+
+.charsheet input.sheet-tab:not(:first-child) + span::before { border-left: none; }
+
+
+
+
+
+.charsheet input[type="number"].sheet-ame-base{
+  border:none;
+  
+  color:#6793BA;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
+}
+
+.charsheet input[type="number"].sheet-ame{
+  border:none;
+  border-bottom: 2px solid #6793BA;
+  color:#6793BA;
+  font-size: 15px;
+}
+
+.charsheet input[type="number"].sheet-ame-b{
+  border:none;
+  color:#6793BA;
+  font-size: 20px;
+  background:transparent;  
+}
+
+.charsheet input[type="number"].sheet-corps-base{
+  border:none;
+  color:#CA6D54;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
+}
+
+.charsheet input[type="number"].sheet-corps{
+  border:none;
+  border-bottom: 2px solid #CA6D54;
+  color:#CA6D54;
+  font-size: 15px;
+}
+
+.charsheet input[type="number"].sheet-corps-b{
+  border:none;
+  color:#CA6D54;
+  font-size: 20px;
+  background:transparent;
+}
+
+.charsheet input[type="number"].sheet-esprit-base{
+  border:none;
+  color:#BC9B6A;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
   
 }
 
-/* header */
-.image-profile {
-  height: 120px;
-  width: 120px;
-  border: solid 2px #919191;
-  background: white;
-}
-
-/* attributs */
-.circle-shaan {
-  zoom: 80%;
-  background-image: url('../assets/cercle.png');
-  height: 800px !important;
-  width: 800px !important;
-  background-position: left;
-  background-size: contain;
-  margin-top: -50px;
-}
-
-.attribut-circle {
-  /* border: 1px dashed blue; */
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.attribut-point {
-  /* border: 1px dashed rgb(61, 61, 255); */
-  position: absolute;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-}
-
-.v-align{
-  align-items: center;
-}
-
-#shaan input {
+.charsheet input[type="number"].sheet-esprit{
   border:none;
-  border-bottom : solid 1px black; 
-  background-color:transparent;
-}
-
-#shaan .input-file {
-  max-width: 140px; word-wrap: break-word
-} 
-#shaan label {
-  white-space: pre
-}
-
-#shaan .p-5{
-  margin: 5px;
-}
-
-
-#circle-shaan .attribut-point input {
-  font-size: 1.4em;
-
-  text-align: center;
-  margin-top: 10px;
-}
-#circle-shaan .attribut-point input:focus {
-  font-size: 1.4em;
-  text-align: center;
-  margin-top: 10px;
-}
-#circle-shaan .attribut-point:not(.current) input {
-  font-size: 2em;
-  border: none;
-}
-#circle-shaan .attribut-point:not(.current) input:focus {
-  font-size: 2em;
-
-  border: none;
-}
-.attribut-arts {
-  top: 83px;
-  left: 199px;
-}
-
-.attribut-arts.current {
-  top: 38px;
-  left: 120px;
-}
-
-.attribut-shaan {
-  top: 35px;
-  left: 376px;
-}
-
-.attribut-shaan.current {
-  top: -10px;
-  left: 298px;
-}
-
-.attribut-magie {
-  top: 85px;
-  left: 545px;
-}
-.attribut-magie.current {
-  top: 40px;
-  left: 610px;
-}
-
-.attribut-social {
-  top: 263px;
-  left: 55px;
-}
-.attribut-social.current {
-  top: 203px;
-  left: 10px;
-}
-
-.attribut-savoir {
-  top: 448px;
-  left: 56px;
-}
-.attribut-savoir.current {
-  top: 388px;
-  left: 10px;
-}
-.attribut-technique {
-  top: 602px;
-  left: 147px;
-}
-.attribut-technique.current {
-  top: 548px;
-  left: 80px;
-}
-.attribut-rituels {
-  top: 262px;
-  left: 683px;
-}
-.attribut-rituels.current {
-  top: 202px;
-  left: 718px;
-}
-.attribut-survie {
-  top: 450px;
-  left: 685px;
-}
-.attribut-survie.current {
-  top: 390px;
-  left: 710px;
-}
-.attribut-combat {
-  top: 598px;
-  left: 592px;
-}
-.attribut-combat.current {
-  top: 540px;
-  left: 632px;
-}
-.attribut-necrose {
-  top: 685px;
-  left: 372px;
-}
-.attribut-necrose.current {
-  top: 675px;
-  left: 285px;
-}
-
-.trine-ame  {
-  top: 310px;
-  left: 326px;
-}
-.trine-ame input {
- 
-  color: #6693ba;
-}
-
-.trine-esprit  {
-  top: 435px;
-    left: 220px;
-}
-
-.trine-esprit input {
-    color:#bc9a68
-}
-
-.trine-corps  {
-  top: 468px;
-  left: 388px;
-
-}
-.trine-corps input {
-  color:#ca6d54
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.window-app {
-  font-family: "Roboto", sans-serif;
-}
-
-.rollable:hover, .rollable:focus {
-  color: #000;
-  text-shadow: 0 0 10px red;
-  cursor: pointer;
-}
-
-.grid,
-.grid-2col {
-  display: grid;
-  grid-column: span 2 / span 2;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin: 10px 0;
-  padding: 0;
-}
-
-.grid-3col {
-  grid-column: span 3 / span 3;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-4col {
-  grid-column: span 4 / span 4;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-5col {
-  grid-column: span 5 / span 5;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.grid-6col {
-  grid-column: span 6 / span 6;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-
-.grid-7col {
-  grid-column: span 7 / span 7;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-.grid-8col {
-  grid-column: span 8 / span 8;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-}
-
-.grid-9col {
-  grid-column: span 9 / span 9;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
-}
-
-.grid-10col {
-  grid-column: span 10 / span 10;
-  grid-template-columns: repeat(10, minmax(0, 1fr));
-}
-
-.grid-11col {
-  grid-column: span 11 / span 11;
-  grid-template-columns: repeat(11, minmax(0, 1fr));
-}
-
-.grid-12col {
-  grid-column: span 12 / span 12;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-.grid-start-2 {
-  grid-column-start: 2;
-}
-
-.grid-start-3 {
-  grid-column-start: 3;
-}
-
-.grid-start-4 {
-  grid-column-start: 4;
-}
-
-.grid-start-5 {
-  grid-column-start: 5;
-}
-
-.grid-start-6 {
-  grid-column-start: 6;
-}
-
-.grid-start-7 {
-  grid-column-start: 7;
-}
-
-.grid-start-8 {
-  grid-column-start: 8;
-}
-
-.grid-start-9 {
-  grid-column-start: 9;
-}
-
-.grid-start-10 {
-  grid-column-start: 10;
-}
-
-.grid-start-11 {
-  grid-column-start: 11;
-}
-
-.grid-start-12 {
-  grid-column-start: 12;
-}
-
-.grid-span-2 {
-  grid-column-end: span 2;
-}
-
-.grid-span-3 {
-  grid-column-end: span 3;
-}
-
-.grid-span-4 {
-  grid-column-end: span 4;
-}
-
-.grid-span-5 {
-  grid-column-end: span 5;
-}
-
-.grid-span-6 {
-  grid-column-end: span 6;
-}
-
-.grid-span-7 {
-  grid-column-end: span 7;
-}
-
-.grid-span-8 {
-  grid-column-end: span 8;
-}
-
-.grid-span-9 {
-  grid-column-end: span 9;
-}
-
-.grid-span-10 {
-  grid-column-end: span 10;
-}
-
-.grid-span-11 {
-  grid-column-end: span 11;
-}
-
-.grid-span-12 {
-  grid-column-end: span 12;
-}
-
-.flex-group-center,
-.flex-group-left,
-.flex-group-right {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  border-bottom: 2px solid #BC9B6A;
+  color:#BC9B6A;
+  font-size: 15px;
+}
+
+.charsheet input[type="number"].sheet-esprit-b{
+  border:none;
+  color:#BC9B6A;
+  font-size: 20px;
+  background:transparent;  
+}
+
+.charsheet input[type="number"].sheet-necrose-base{
+  border:none;
+  
+  color:#6D6F71;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
+  
+}
+
+.charsheet input[type="number"].sheet-necrose{
+  border:none;
+  border-bottom: 2px solid #6D6F71;
+  color:#6D6F71;
+  font-size: 15px;
+}
+
+.charsheet .sheet-contenant-cercle{
+  clear: both;
+  position:relative;
+  top:0px;
+  left:0px;
+  width: 740px;
+  height:670px;
+  border: 0px solid blue;
+}
+
+.charsheet .sheet-cercle{
+  position:absolute;
+  top:0px;
+  left:70px;
+  width: 660px;
+  border: 0px solid green;
+}
+
+.charsheet .sheet-ame-d{
+  position:absolute;
+  top:520px;
+  left:317px;
   text-align: center;
 }
 
-.flex-group-left {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  text-align: left;
-}
-
-.flex-group-right {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  text-align: right;
-}
-
-.flexshrink {
-  -webkit-box-flex: 0;
-  -ms-flex: 0;
-  flex: 0;
-}
-
-.flex-between {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.flexlarge {
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-}
-
-.align-left {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  text-align: left;
-}
-
-.align-right {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  text-align: right;
-}
-
-.align-center {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.charsheet .sheet-art{
+  position:absolute;
+  top:305px;
+  left:142px;
   text-align: center;
 }
 
-/* Styles limited to shaan sheets */
-.shaan .item-form {
-  font-family: "Roboto", sans-serif;
+.charsheet .sheet-art-base{
+  position:absolute;
+  top:325px;
+  left:203px;
+  text-align: center;
 }
 
-.shaan .sheet-header {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 auto;
-  flex: 0 auto;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin-bottom: 10px;
+.charsheet .sheet-shaan{
+  position:absolute;
+  top:265px;
+  left:425px;
+  text-align: center;
 }
 
-.shaan .sheet-header .profile-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
-  height: 100px;
-  margin-right: 10px;
+.charsheet .sheet-shaan-base{
+  position:absolute;
+  top:281px;
+  left:358px;
+  text-align: center;
 }
 
-.shaan .sheet-header .header-fields {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.charsheet .sheet-magie{
+  position:absolute;
+  top:316px;
+  left:573px;
+  text-align: center;
 }
 
-.shaan .sheet-header h1.charname {
-  height: 50px;
-  padding: 0px;
-  margin: 5px 0;
-  border-bottom: 0;
+.charsheet .sheet-magie-base{
+  position:absolute;
+  top:325px;
+  left:505px;
+  text-align: center;
 }
 
-.shaan .sheet-header h1.charname input {
+.charsheet .sheet-corps-d{
+  position:absolute;
+  top:668px;
+  left:365px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel{
+  position:absolute;
+  top:427px;
+  left:635px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel-base{
+  position:absolute;
+  top:485px;
+  left:626px;
+  text-align: center;
+}
+.charsheet .sheet-survie{
+  position:absolute;
+  top:587px;
+  left:649px;
+  text-align: center;
+}
+
+.charsheet .sheet-survie-base{
+  position:absolute;
+  top:647px;
+  left:626px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat{
+  position:absolute;
+  top:782px;
+  left:621px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat-base{
+  position:absolute;
+  top:775px;
+  left:547px;
+  text-align: center;
+}
+
+.charsheet .sheet-esprit-d{
+  position:absolute;
+  top:620px;
+  left:230px;
+  text-align: center;
+}
+
+.charsheet .sheet-social{
+  position:absolute;
+  top:423px;
+  left:68px;
+  text-align: center;
+}
+
+.charsheet .sheet-social-base{
+  position:absolute;
+  top:481px;
+  left:79px;
+  text-align: center;
+}
+.charsheet .sheet-savoir{
+  position:absolute;
+  top:584px;
+  left:51px;
+  text-align: center;
+}
+
+.charsheet .sheet-savoir-base{
+  position:absolute;
+  top:644px;
+  left:79px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-technique{
+  position:absolute;
+  top:782px;
+  left:92px;
+  text-align: center;
+}
+
+.charsheet .sheet-technique-base{
+  position:absolute;
+  top:778px;
+  left:158px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d{
+  position:absolute;
+  top:864px;
+  left:280px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d-base{
+  position:absolute;
+  top:850px;
+  left:353px;
+  text-align: center;
+}
+
+.charsheet th.sheet-esprit{
+  color: #FFF;
+  background-color: #BC9B6A;
+  width: 25%;
+}
+
+.charsheet th.sheet-ame{
+  color: #FFF;
+  background-color: #6793BA;
+  width: 25%;
+}
+
+.charsheet th.sheet-corps{
+  color: #FFF;
+  background-color: #CA6D54;
+  width: 25%;
+}
+
+.charsheet th.sheet-necrose{
+  color: #FFF;
+  background-color: #6D6F71;
+  width: 25%;
+}
+
+
+
+.charsheet input.sheet-magie-perception
+{
+    opacity: 0;
+	margin: -200px 0 0 20px;
+    width: 193px;
+    height: 200px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-perception + span::before {
+	margin: -220px 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327276857316107231.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-perception:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327276857316107232.jpg');
+}
+
+.charsheet input.sheet-magie-non-perception
+{
+    opacity: 0;
+	margin: -200px 0 0 0;	
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-non-perception + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327266857316107229.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-non-perception:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327266857316107230.jpg');
+}
+
+.charsheet input.sheet-magie-mutation
+{
+    opacity: 0;
+	margin: -200px 0 0 0;	
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-mutation + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327256857316107227.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-mutation:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327266857316107228.jpg');
+}
+
+.charsheet input.sheet-magie-deplacement
+{
+    opacity: 0;
+	margin: -200px 0 0 0;	
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-deplacement + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327256857316107225.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-deplacement:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327256857316107226.jpg');
+}
+
+.charsheet input.sheet-magie-controle
+{
+    opacity: 0;
+	margin: -200px 0 0 0;	
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-controle + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327256857316107223.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-controle:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040327256857316107224.jpg');
+}
+
+
+.charsheet input.sheet-magie-moi
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-moi + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437296857316107298.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-moi:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437296857316107299.jpg');
+}
+
+.charsheet input.sheet-magie-lui
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-lui + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437296857316107296.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-lui:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437296857316107297.jpg');
+}
+
+.charsheet input.sheet-magie-limbes
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-limbes + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437286857316107294.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-limbes:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437286857316107295.jpg');
+}
+
+.charsheet input.sheet-magie-objet
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-objet + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437306857316107300.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-objet:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437306857316107301.jpg');
+}
+
+.charsheet input.sheet-magie-animal
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-animal + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437266857316107288.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-animal:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437276857316107289.jpg');
+}
+
+.charsheet input.sheet-magie-vegetal
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-vegetal + span::before {
+    margin: 200px 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437316857316107304.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-vegetal:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437316857316107305.jpg');
+}
+
+.charsheet input.sheet-magie-air
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-air + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437266857316107287.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-air:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437266857316107286.jpg');
+}
+
+.charsheet input.sheet-magie-eau
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-eau + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437276857316107290.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-eau:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437276857316107291.jpg');
+}
+
+.charsheet input.sheet-magie-feu
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-feu + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437276857316107292.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-feu:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437286857316107293.jpg');
+}
+
+.charsheet input.sheet-magie-terre
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-terre + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437306857316107302.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-terre:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902040437306857316107303.jpg');
+}
+
+
+.charsheet input.sheet-magie-freq-jour
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-freq-jour + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232496857316107861.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-freq-jour:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232496857316107862.jpg');
+}
+
+.charsheet input.sheet-magie-freq-situation
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-freq-situation + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232496857316107863.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-freq-situation:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232496857316107864.jpg');
+}
+
+.charsheet input.sheet-magie-freq-2tours
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-freq-2tours + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232506857316107867.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-freq-2tours:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232506857316107868.jpg');
+}
+
+
+.charsheet input.sheet-magie-freq-tour
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-freq-tour + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232506857316107865.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-freq-tour:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051232506857316107866.jpg');
+}
+
+.charsheet input.sheet-magie-portee-contact
+{
+    opacity: 0;
+	margin: -200px 0 0 100px;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-portee-contact + span::before {
+    margin: -200px 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233126857316107870.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-portee-contact:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233126857316107869.jpg');
+}
+
+.charsheet input.sheet-magie-portee-interaction
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-portee-interaction + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233136857316107875.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-portee-interaction:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233146857316107876.jpg');
+}
+
+.charsheet input.sheet-magie-portee-distance
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-portee-distance + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233136857316107872.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-portee-distance:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233126857316107871.jpg');
+}
+
+
+.charsheet input.sheet-magie-portee-horizon
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-portee-horizon + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233136857316107873.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-portee-horizon:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F05%2F%2F1902051233136857316107874.jpg');
+}
+
+.charsheet input.sheet-magie-1cible
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-1cible + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117316857316107800.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-1cible:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117316857316107799.jpg');
+}
+
+.charsheet input.sheet-magie-2cibles
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-2cibles + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117316857316107801.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-2cibles:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117316857316107802.jpg');
+}
+
+.charsheet input.sheet-magie-cibles-magie2
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-cibles-magie2 + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117326857316107805.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-cibles-magie2:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117326857316107806.jpg');
+}
+
+
+.charsheet input.sheet-magie-cibles-magie
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-cibles-magie + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117326857316107803.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-cibles-magie:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041117326857316107804.jpg');
+}
+
+.charsheet input.sheet-magie-duree-tour
+{
+    opacity: 0;
+	margin: -200px 0 0 100px;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-duree-tour + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118106857316107811.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-duree-tour:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118106857316107812.jpg');
+}
+
+.charsheet input.sheet-magie-duree-magie3
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-duree-magie3 + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118116857316107813.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-duree-magie3:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118116857316107814.jpg');
+}
+
+.charsheet input.sheet-magie-duree-heure
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-duree-heure + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118096857316107808.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-duree-heure:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118096857316107807.jpg');
+}
+
+
+.charsheet input.sheet-magie-duree-jour
+{
+    opacity: 0;
+	margin: -200px 0 0 0;		
+    width: 193px;
+    height: 201px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.charsheet input.sheet-magie-duree-jour + span::before {
+    margin: 0 0 0 -192px;
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118096857316107809.jpg');
+    width: 192px;
+    height: 200px;
+}
+
+.charsheet input.sheet-magie-duree-jour:checked + span::before {
+    content: url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm09.casimages.com%2Fimg%2F2019%2F02%2F04%2F%2F1902041118106857316107810.jpg');
+}
+
+.charsheet .sheet-eveil-d{
+  position:absolute;
+  top:578px;
+  left:270px;
+  text-align: center;
+}
+
+.charsheet .sheet-autre{
+  position:absolute;
+  top:240px;
+  left:132px;
+  text-align: center;
+}
+
+.charsheet .sheet-autre-base{
+  position:absolute;
+  top:260px;
+  left:193px;
+  text-align: center;
+}
+
+.charsheet .sheet-terre{
+  position:absolute;
+  top:210px;
+  left:425px;
+  text-align: center;
+}
+
+.charsheet .sheet-terre-base{
+  position:absolute;
+  top:216px;
+  left:350px;
+  text-align: center;
+}
+
+.charsheet .sheet-moi{
+  position:absolute;
+  top:251px;
+  left:573px;
+  text-align: center;
+}
+
+.charsheet .sheet-moi-base{
+  position:absolute;
+  top:260px;
+  left:502px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-animal{
+  position:absolute;
+  top:362px;
+  left:635px;
+  text-align: center;
+}
+
+.charsheet .sheet-animal-base{
+  position:absolute;
+  top:418px;
+  left:625px;
+  text-align: center;
+}
+.charsheet .sheet-eau{
+  position:absolute;
+  top:522px;
+  left:649px;
+  text-align: center;
+}
+
+.charsheet .sheet-eau-base{
+  position:absolute;
+  top:582px;
+  left:626px;
+  text-align: center;
+}
+
+.charsheet .sheet-feu{
+  position:absolute;
+  top:719px;
+  left:616px;
+  text-align: center;
+}
+
+.charsheet .sheet-feu-base{
+  position:absolute;
+  top:714px;
+  left:544px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-air{
+  position:absolute;
+  top:358px;
+  left:68px;
+  text-align: center;
+}
+
+.charsheet .sheet-air-base{
+  position:absolute;
+  top:416px;
+  left:69px;
+  text-align: center;
+}
+.charsheet .sheet-vegetal{
+  position:absolute;
+  top:519px;
+  left:51px;
+  text-align: center;
+}
+
+.charsheet .sheet-vegetal-base{
+  position:absolute;
+  top:580px;
+  left:68px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-objet{
+  position:absolute;
+  top:722px;
+  left:87px;
+  text-align: center;
+}
+
+.charsheet .sheet-objet-base{
+  position:absolute;
+  top:717px;
+  left:148px;
+  text-align: center;
+}
+
+.charsheet .sheet-limbes-d{
+  position:absolute;
+  top:799px;
+  left:280px;
+  text-align: center;
+}
+
+.charsheet .sheet-limbes-d-base{
+  position:absolute;
+  top:790px;
+  left:350px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-ame-d_shaani{
+  position:absolute;
+  top:458px;
+  left:317px;
+  text-align: center;
+}
+
+.charsheet .sheet-art_shaani{
+  position:absolute;
+  top:240px;
+  left:142px;
+  text-align: center;
+}
+
+.charsheet .sheet-art-base_shaani{
+  position:absolute;
+  top:263px;
+  left:203px;
+  text-align: center;
+}
+
+.charsheet .sheet-shaan_shaani{
+  position:absolute;
+  top:200px;
+  left:425px;
+  text-align: center;
+}
+
+.charsheet .sheet-shaan-base_shaani{
+  position:absolute;
+  top:219px;
+  left:358px;
+  text-align: center;
+}
+
+.charsheet .sheet-magie_shaani{
+  position:absolute;
+  top:252px;
+  left:573px;
+  text-align: center;
+}
+
+.charsheet .sheet-magie-base_shaani{
+  position:absolute;
+  top:263px;
+  left:505px;
+  text-align: center;
+}
+
+.charsheet .sheet-corps-d_shaani{
+  position:absolute;
+  top:606px;
+  left:365px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel_shaani{
+  position:absolute;
+  top:362px;
+  left:635px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel-base_shaani{
+  position:absolute;
+  top:423px;
+  left:626px;
+  text-align: center;
+}
+.charsheet .sheet-survie_shaani{
+  position:absolute;
+  top:522px;
+  left:649px;
+  text-align: center;
+}
+
+.charsheet .sheet-survie-base_shaani{
+  position:absolute;
+  top:585px;
+  left:626px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat_shaani{
+  position:absolute;
+  top:717px;
+  left:621px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat-base_shaani{
+  position:absolute;
+  top:713px;
+  left:547px;
+  text-align: center;
+}
+
+.charsheet .sheet-esprit-d_shaani{
+  position:absolute;
+  top:558px;
+  left:230px;
+  text-align: center;
+}
+
+.charsheet .sheet-social_shaani{
+  position:absolute;
+  top:358px;
+  left:68px;
+  text-align: center;
+}
+
+.charsheet .sheet-social-base_shaani{
+  position:absolute;
+  top:419px;
+  left:79px;
+  text-align: center;
+}
+.charsheet .sheet-savoir_shaani{
+  position:absolute;
+  top:519px;
+  left:51px;
+  text-align: center;
+}
+
+.charsheet .sheet-savoir-base_shaani{
+  position:absolute;
+  top:582px;
+  left:79px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-technique_shaani{
+  position:absolute;
+  top:717px;
+  left:92px;
+  text-align: center;
+}
+
+.charsheet .sheet-technique-base_shaani{
+  position:absolute;
+  top:716px;
+  left:158px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d_shaani{
+  position:absolute;
+  top:799px;
+  left:280px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d-base_shaani{
+  position:absolute;
+  top:788px;
+  left:353px;
+  text-align: center;
+}
+
+.charsheet .sheet-repetition select{
+  width : 90px;
+}
+
+.charsheet .sheet-repetition input[type="text"] {
+  width : 190px;
+
+}
+
+.charsheet .sheet-repetition input[type="number"] {
+  width: 50px;
+}
+
+
+.charsheet .sheet-pouvoir-esprit{
+	background:#BC9B6A;
+	border-bottom: 2px solid #BC9B6A;
+	color:#000000;
+}
+.charsheet .sheet-pouvoir-ame{
+	border-bottom: 2px solid #6793BA;
+	background:#6793BA;
+	color:#000000;
+}
+.charsheet .sheet-pouvoir-corps{
+	border-bottom: 2px solid #CA6D54;
+	background:#CA6D54;
+	color:#000000;
+}
+.charsheet .sheet-pouvoir-necrose{
+	border-bottom: 2px solid #000000;
+	background:#000000;
+	color:#ffffff;
+}
+
+
+.charsheet div.repcontrol{
+  display: inline-block;
   width: 100%;
-  height: 100%;
-  margin: 0;
+}
+.charsheet .repcontrol_move{
+  height: 11px;
+  line-height: 11px;
+  margin-top: 4px;
+}
+.charsheet .repcontrol_del {
+  height: 22px;
+  line-height: 12px;
+  margin-top: 4px;
+  width: 30px;
+}
+.charsheet .repcontrol_add,.charsheet .repcontrol_edit {
+  color: transparent;
+  box-shadow: none;
+  background: transparent;
+  border-color: transparent;
+  text-shadow:none;
+  width: 100px;
+}
+.charsheet .repcontrol_add:focus,.charsheet .repcontrol_edit:focus {
+  outline: none;
+}
+.charsheet .repcontrol .repcontrol_edit:after {
+  content: 'y';
+  visibility: visible;
+  font-family: pictos;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 2px 4px 2px 4px;
+  color: rgba(177,121,63,0.7);
+}
+.charsheet .editmode ~ .repcontrol .repcontrol_edit:after {
+  content: '2';
+}
+.charsheet .repcontrol .repcontrol_add:before {
+  content: '+';
+  visibility: visible;
+  font-family: pictos;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 2px 4px 2px 4px;
+  color: rgba(177,121,63,0.7);
+}
+.charsheet .repcontrol .repcontrol_edit:hover:after,.charsheet .repcontrol .repcontrol_add:hover:before
+{
+  box-shadow: 1px 1px 4px 2px rgba(147,35,21,0.8);
+  border-color: #CF3134;
+  color: #CF3134;
+}
+.charsheet .repcontrol_add:focus:before,.charsheet .repcontrol_edit:focus:after {
+  color: #CF3134;
 }
 
-.shaan .sheet-tabs {
-  -webkit-box-flex: 0;
-  -ms-flex: 0;
-  flex: 0;
-}
 
-.shaan .sheet-body,
-.shaan .sheet-body .tab,
-.shaan .sheet-body .tab .editor {
-  height: 100%;
-}
-
-.shaan .tox .tox-editor-container {
-  background: #fff;
-}
-
-.shaan .tox .tox-edit-area {
-  padding: 0 8px;
-}
-
-.shaan .resource-label {
-  font-weight: bold;
-}
-
-.shaan .items-header {
-  height: 28px;
-  margin: 2px 0;
-  padding: 0;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
-  font-weight: bold;
-}
-
-.shaan .items-header > * {
-  font-size: 14px;
-  text-align: center;
-}
-
-.shaan .items-header .item-name {
-  font-weight: bold;
-  padding-left: 5px;
-  text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.shaan .items-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  color: #444;
-}
-
-.shaan .items-list .item-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.shaan .items-list .item-name {
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-  margin: 0;
-  overflow: hidden;
-  font-size: 13px;
-  text-align: left;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.shaan .items-list .item-name h3, .shaan .items-list .item-name h4 {
-  margin: 0;
-  white-space: nowrap;
-  overflow-x: hidden;
-}
-
-.shaan .items-list .item-controls {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.shaan .items-list .item-controls a {
-  font-size: 12px;
-  text-align: center;
-  margin: 0 6px;
-}
-
-.shaan .items-list .item {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 2px;
-  border-bottom: 1px solid #c9c7b8;
-}
-
-.shaan .items-list .item:last-child {
-  border-bottom: none;
-}
-
-.shaan .items-list .item .item-name {
-  color: #191813;
-}
-
-.shaan .items-list .item .item-name .item-image {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 30px;
-  flex: 0 0 30px;
-  height: 30px;
-  background-size: 30px;
+.charsheet button[type="roll"].sheet-rollbase {
+  color: #538079;
+  background: transparent;    
   border: none;
-  margin-right: 5px;
+  border-radius: 0px;
+  font-size: 30pt;
 }
 
-.shaan .items-list .item-prop {
-  text-align: center;
-  border-left: 1px solid #c9c7b8;
-  border-right: 1px solid #c9c7b8;
-  font-size: 12px;
+.charsheet button[type="roll"].sheet-rollnecrose {
+  color: #000000;
+  background: transparent;    
+  border: none;
+  border-radius: 0px;
+  font-size: 30pt;
 }
 
-.shaan .items-list .items-header {
-  height: 28px;
-  margin: 2px 0;
-  padding: 0;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
+
+.sheet-rolltemplate-shaan-base table{
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    color: black;
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+}
+
+.sheet-rolltemplate-shaan-base th{
+  background-color:#538079;
+  margin: 5px;
+  padding: 3px;
+  color: #FFFFFF;
+  font-size: 102%;
+}
+
+.sheet-rolltemplate-shaan-base td{
+  margin: 5px;
+  padding: 3px;
+  background-color:#FFFFFF;
+  height: 35px;
+}
+.sheet-rolltemplate-shaan-base tr.sheet-de_ame{
+  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_ame{
+  color:#6793BA;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_ame_jet{
+  color:#6793BA;
+  background-color: transparent;
+  padding: 6px;
+  font-size: large;
   font-weight: bold;
-}
-
-.shaan .items-list .items-header > * {
-  font-size: 12px;
   text-align: center;
+  vertical-align: middle;  
 }
 
-.shaan .items-list .items-header .item-name {
-  padding-left: 5px;
-  text-align: left;
+.sheet-rolltemplate-shaan-base tr.sheet-de_esprit{
+  
 }
 
-.shaan .item-formula {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 200px;
-  flex: 0 0 200px;
-  padding: 0 8px;
+.sheet-rolltemplate-shaan-base td.sheet-de_esprit{
+  color:#BC9B6A;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
 }
 
-.shaan .effects .item .effect-source,
-.shaan .effects .item .effect-duration,
-.shaan .effects .item .effect-controls {
+.sheet-rolltemplate-shaan-base td.sheet-de_esprit_jet{
+  color:#BC9B6A;
+  background-color: transparent;
+  padding: 6px;
+  font-size: large;
+  font-weight: bold;
   text-align: center;
-  border-left: 1px solid #c9c7b8;
-  border-right: 1px solid #c9c7b8;
-  font-size: 12px;
+  vertical-align: middle;  
 }
 
-.shaan .effects .item .effect-controls {
+
+.sheet-rolltemplate-shaan-base tr.sheet-de_corps{
+  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_corps{
+  color:#CA6D54;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_corps_jet{
+  color:#CA6D54;
+  background-color: transparent;
+  padding: 6px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;  
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult  {
+    background-color: #ffffff;
+    border: none;
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullcrit {
   border: none;
 }
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullfail {
+  border: none;
+}
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.importantroll {
+  border: none;
+}
+
+
+
+.sheet-rolltemplate-shaan-necrose table{
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    color: ##000000;
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+}
+
+.sheet-rolltemplate-shaan-necrose th{
+  background-color:#538079;
+  margin: 5px;
+  padding: 3px;
+  color: #FFFFFF;
+  font-size: 102%;
+}
+
+.sheet-rolltemplate-shaan-necrose td{
+  margin: 5px;
+  padding: 3px;
+  background-color:#FFFFFF;
+  height: 35px;
+}
+
+.sheet-rolltemplate-shaan-necrose td.sheet-de_necrose{
+  color:#000000;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult  {
+    background-color: #FFFFFF;
+    border: none;
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullcrit {
+  border: none;
+}
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullfail {
+  border: none;
+}
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.importantroll {
+  border: none;
+}
+
+.sheet-rolltemplate-shaan-pouvoir-esprit table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #967543;
+	border-bottom: 2px solid #BC9B6A;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-esprit th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;
+}
+.sheet-rolltemplate-shaan-pouvoir-esprit td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+.sheet-rolltemplate-shaan-pouvoir-ame table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #426d92;
+	border-bottom: 2px solid #6793BA;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-ame th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;	
+}
+.sheet-rolltemplate-shaan-pouvoir-ame td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+.sheet-rolltemplate-shaan-pouvoir-corps table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #a04932;
+	border-bottom: 2px solid #CA6D54;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-corps th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;	
+}
+.sheet-rolltemplate-shaan-pouvoir-corps td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+.sheet-rolltemplate-shaan-pouvoir-necrose table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #000000;
+	border-bottom: 2px solid #000000;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-necrose th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;	
+}
+.sheet-rolltemplate-shaan-pouvoir-necrose td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+
+.charsheet{
+	font-family: "Times New Roman", Times, serif;
+	font-variant: small-caps;
+	background:none;
+}
+
+
+.charsheet input[type="checkbox"].magie + span::before {
+    margin-right: 4px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    content: "▼";
+    width: 14px;
+    height: 14px;
+    font-size: 40px;
+}
+
+.charsheet input[type="checkbox"].magie:checked + span::before {
+    content: "https://nsm09.casimages.com/img/2019/01/20//1901201222476857316083780.jpg";
+}
+
+.charsheet div.sheet-tab-content { display: none; }
+.charsheet input.sheet-fp:checked ~ div.sheet-fp,.charsheet input.sheet-renaissant:checked ~ div.sheet-renaissant,.charsheet input.sheet-shaani:checked ~ div.sheet-shaani,.charsheet input.sheet-tab1:checked ~ div.sheet-tab1,.charsheet input.sheet-tab2:checked ~ div.sheet-tab2,.charsheet input.sheet-tab3:checked ~ div.sheet-tab3,.charsheet input.sheet-tab4:checked ~ div.sheet-tab4,.charsheet input.sheet-tab5:checked ~ div.sheet-tab5,.charsheet input.sheet-tab6:checked ~ div.sheet-tab6
+
+{
+    display:block;
+}
+
+.charsheet input.sheet-tab{
+    width:150px;
+    height: 20px;
+    top: 5px;
+    left: 6px;
+    margin: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+.charsheet input.sheet-tab::before{
+    content: attr(title);
+
+    border-radius:.5em;
+    border:2px solid black;
+    text-align: center;
+    display: inline-block;
+    
+    background: black;
+    color:white;
+    width: 150px;
+    height: 20px;
+    font-size: 18px;
+}
+.charsheet input.sheet-tab:checked::before{
+    background:#CCCCCC;
+    color:black;
+    border-radius:.5em;
+    border:2px solid black;
+}
+
+.charsheet input.sheet-small_tab{
+    width:90px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1;
+    margin:5px;
+}
+.charsheet input.sheet-small_tab::before{
+    content: attr(title);
+    
+    border-radius:.5em;
+    text-align: center;
+    display: inline-block;
+    color:white;
+    background:black;
+    border:2px solid black;
+    width: 90px;
+    height:20px;
+    font-size: 14px;
+
+}
+.charsheet input.sheet-small_tab:checked::before{
+    border:2px solid black;
+    background:#CCCCCC;
+    color:black;
+    border-radius:.5em;
+}
+
+.charsheet div.sheet-tab-content{
+    border-top-color: #000;
+    margin: 0 0 0 0;
+}
+
+
+
+
+.charsheet input[type="number"].sheet-ame-base{
+  border:none;
+  
+  color:#6793BA;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
+}
+
+.charsheet input[type="number"].sheet-ame{
+  border:none;
+  border-bottom: 2px solid #6793BA;
+  color:#6793BA;
+  font-size: 15px;
+}
+
+.charsheet input[type="number"].sheet-ame-b{
+  border:none;
+  color:#6793BA;
+  font-size: 20px;
+  background:transparent;  
+}
+
+.charsheet input[type="number"].sheet-corps-base{
+  border:none;
+  color:#CA6D54;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
+}
+
+.charsheet input[type="number"].sheet-corps{
+  border:none;
+  border-bottom: 2px solid #CA6D54;
+  color:#CA6D54;
+  font-size: 15px;
+}
+
+.charsheet input[type="number"].sheet-corps-b{
+  border:none;
+  color:#CA6D54;
+  font-size: 20px;
+  background:transparent;
+}
+
+.charsheet input[type="number"].sheet-esprit-base{
+  border:none;
+  color:#BC9B6A;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
+  
+}
+
+.charsheet input[type="number"].sheet-esprit{
+  border:none;
+  border-bottom: 2px solid #BC9B6A;
+  color:#BC9B6A;
+  font-size: 15px;
+}
+
+.charsheet input[type="number"].sheet-esprit-b{
+  border:none;
+  color:#BC9B6A;
+  font-size: 20px;
+  background:transparent;  
+}
+
+.charsheet input[type="number"].sheet-necrose-base{
+  border:none;
+  
+  color:#6D6F71;
+  font-size: 25px;
+  height:30px;
+  width:60px;
+  font-style:bold;
+  
+}
+
+.charsheet input[type="number"].sheet-necrose{
+  border:none;
+  border-bottom: 2px solid #6D6F71;
+  color:#6D6F71;
+  font-size: 15px;
+}
+
+.charsheet .sheet-contenant-cercle{
+  clear: both;
+  position:relative;
+  top:0px;
+  left:0px;
+  width: 740px;
+  height:670px;
+  border: 0px solid blue;
+}
+
+.charsheet .sheet-cercle{
+  position:absolute;
+  top:0px;
+  left:70px;
+  width: 660px;
+  border: 0px solid green;
+}
+
+.charsheet .sheet-ame-d{
+  position:absolute;
+  top:520px;
+  left:317px;
+  text-align: center;
+}
+
+.charsheet .sheet-art{
+  position:absolute;
+  top:305px;
+  left:142px;
+  text-align: center;
+}
+
+.charsheet .sheet-art-base{
+  position:absolute;
+  top:325px;
+  left:203px;
+  text-align: center;
+}
+
+.charsheet .sheet-shaan{
+  position:absolute;
+  top:265px;
+  left:425px;
+  text-align: center;
+}
+
+.charsheet .sheet-shaan-base{
+  position:absolute;
+  top:281px;
+  left:358px;
+  text-align: center;
+}
+
+.charsheet .sheet-magie{
+  position:absolute;
+  top:316px;
+  left:573px;
+  text-align: center;
+}
+
+.charsheet .sheet-magie-base{
+  position:absolute;
+  top:325px;
+  left:505px;
+  text-align: center;
+}
+
+.charsheet .sheet-corps-d{
+  position:absolute;
+  top:668px;
+  left:365px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel{
+  position:absolute;
+  top:427px;
+  left:635px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel-base{
+  position:absolute;
+  top:485px;
+  left:626px;
+  text-align: center;
+}
+.charsheet .sheet-survie{
+  position:absolute;
+  top:587px;
+  left:649px;
+  text-align: center;
+}
+
+.charsheet .sheet-survie-base{
+  position:absolute;
+  top:647px;
+  left:626px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat{
+  position:absolute;
+  top:782px;
+  left:621px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat-base{
+  position:absolute;
+  top:775px;
+  left:547px;
+  text-align: center;
+}
+
+.charsheet .sheet-esprit-d{
+  position:absolute;
+  top:620px;
+  left:230px;
+  text-align: center;
+}
+
+.charsheet .sheet-social{
+  position:absolute;
+  top:423px;
+  left:68px;
+  text-align: center;
+}
+
+.charsheet .sheet-social-base{
+  position:absolute;
+  top:481px;
+  left:79px;
+  text-align: center;
+}
+.charsheet .sheet-savoir{
+  position:absolute;
+  top:584px;
+  left:51px;
+  text-align: center;
+}
+
+.charsheet .sheet-savoir-base{
+  position:absolute;
+  top:644px;
+  left:79px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-technique{
+  position:absolute;
+  top:782px;
+  left:92px;
+  text-align: center;
+}
+
+.charsheet .sheet-technique-base{
+  position:absolute;
+  top:778px;
+  left:158px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d{
+  position:absolute;
+  top:864px;
+  left:280px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d-base{
+  position:absolute;
+  top:850px;
+  left:353px;
+  text-align: center;
+}
+
+.charsheet th.sheet-esprit{
+  color: #FFF;
+  background-color: #BC9B6A;
+  width: 25%;
+}
+
+.charsheet th.sheet-ame{
+  color: #FFF;
+  background-color: #6793BA;
+  width: 25%;
+}
+
+.charsheet th.sheet-corps{
+  color: #FFF;
+  background-color: #CA6D54;
+  width: 25%;
+}
+
+.charsheet th.sheet-necrose{
+  color: #FFF;
+  background-color: #6D6F71;
+  width: 25%;
+}
+
+.charsheet .sheet-eveil-d{
+  position:absolute;
+  top:578px;
+  left:270px;
+  text-align: center;
+}
+
+.charsheet .sheet-autre{
+  position:absolute;
+  top:240px;
+  left:132px;
+  text-align: center;
+}
+
+.charsheet .sheet-autre-base{
+  position:absolute;
+  top:260px;
+  left:193px;
+  text-align: center;
+}
+
+.charsheet .sheet-terre{
+  position:absolute;
+  top:210px;
+  left:425px;
+  text-align: center;
+}
+
+.charsheet .sheet-terre-base{
+  position:absolute;
+  top:216px;
+  left:350px;
+  text-align: center;
+}
+
+.charsheet .sheet-moi{
+  position:absolute;
+  top:251px;
+  left:573px;
+  text-align: center;
+}
+
+.charsheet .sheet-moi-base{
+  position:absolute;
+  top:260px;
+  left:502px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-animal{
+  position:absolute;
+  top:362px;
+  left:635px;
+  text-align: center;
+}
+
+.charsheet .sheet-animal-base{
+  position:absolute;
+  top:418px;
+  left:625px;
+  text-align: center;
+}
+.charsheet .sheet-eau{
+  position:absolute;
+  top:522px;
+  left:649px;
+  text-align: center;
+}
+
+.charsheet .sheet-eau-base{
+  position:absolute;
+  top:582px;
+  left:626px;
+  text-align: center;
+}
+
+.charsheet .sheet-feu{
+  position:absolute;
+  top:719px;
+  left:616px;
+  text-align: center;
+}
+
+.charsheet .sheet-feu-base{
+  position:absolute;
+  top:714px;
+  left:544px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-air{
+  position:absolute;
+  top:358px;
+  left:68px;
+  text-align: center;
+}
+
+.charsheet .sheet-air-base{
+  position:absolute;
+  top:416px;
+  left:69px;
+  text-align: center;
+}
+.charsheet .sheet-vegetal{
+  position:absolute;
+  top:519px;
+  left:51px;
+  text-align: center;
+}
+
+.charsheet .sheet-vegetal-base{
+  position:absolute;
+  top:580px;
+  left:68px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-objet{
+  position:absolute;
+  top:722px;
+  left:87px;
+  text-align: center;
+}
+
+.charsheet .sheet-objet-base{
+  position:absolute;
+  top:717px;
+  left:148px;
+  text-align: center;
+}
+
+.charsheet .sheet-limbes-d{
+  position:absolute;
+  top:799px;
+  left:280px;
+  text-align: center;
+}
+
+.charsheet .sheet-limbes-d-base{
+  position:absolute;
+  top:790px;
+  left:350px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-ame-d_shaani{
+  position:absolute;
+  top:458px;
+  left:317px;
+  text-align: center;
+}
+
+.charsheet .sheet-art_shaani{
+  position:absolute;
+  top:240px;
+  left:142px;
+  text-align: center;
+}
+
+.charsheet .sheet-art-base_shaani{
+  position:absolute;
+  top:263px;
+  left:203px;
+  text-align: center;
+}
+
+.charsheet .sheet-shaan_shaani{
+  position:absolute;
+  top:200px;
+  left:425px;
+  text-align: center;
+}
+
+.charsheet .sheet-shaan-base_shaani{
+  position:absolute;
+  top:219px;
+  left:358px;
+  text-align: center;
+}
+
+.charsheet .sheet-magie_shaani{
+  position:absolute;
+  top:252px;
+  left:573px;
+  text-align: center;
+}
+
+.charsheet .sheet-magie-base_shaani{
+  position:absolute;
+  top:263px;
+  left:505px;
+  text-align: center;
+}
+
+.charsheet .sheet-corps-d_shaani{
+  position:absolute;
+  top:606px;
+  left:365px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel_shaani{
+  position:absolute;
+  top:362px;
+  left:635px;
+  text-align: center;
+}
+
+.charsheet .sheet-rituel-base_shaani{
+  position:absolute;
+  top:423px;
+  left:626px;
+  text-align: center;
+}
+.charsheet .sheet-survie_shaani{
+  position:absolute;
+  top:522px;
+  left:649px;
+  text-align: center;
+}
+
+.charsheet .sheet-survie-base_shaani{
+  position:absolute;
+  top:585px;
+  left:626px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat_shaani{
+  position:absolute;
+  top:717px;
+  left:621px;
+  text-align: center;
+}
+
+.charsheet .sheet-combat-base_shaani{
+  position:absolute;
+  top:713px;
+  left:547px;
+  text-align: center;
+}
+
+.charsheet .sheet-esprit-d_shaani{
+  position:absolute;
+  top:558px;
+  left:230px;
+  text-align: center;
+}
+
+.charsheet .sheet-social_shaani{
+  position:absolute;
+  top:358px;
+  left:68px;
+  text-align: center;
+}
+
+.charsheet .sheet-social-base_shaani{
+  position:absolute;
+  top:419px;
+  left:79px;
+  text-align: center;
+}
+.charsheet .sheet-savoir_shaani{
+  position:absolute;
+  top:519px;
+  left:51px;
+  text-align: center;
+}
+
+.charsheet .sheet-savoir-base_shaani{
+  position:absolute;
+  top:582px;
+  left:79px;
+  text-align: center;
+}
+
+
+.charsheet .sheet-technique_shaani{
+  position:absolute;
+  top:717px;
+  left:92px;
+  text-align: center;
+}
+
+.charsheet .sheet-technique-base_shaani{
+  position:absolute;
+  top:716px;
+  left:158px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d_shaani{
+  position:absolute;
+  top:799px;
+  left:280px;
+  text-align: center;
+}
+
+.charsheet .sheet-necrose-d-base_shaani{
+  position:absolute;
+  top:788px;
+  left:353px;
+  text-align: center;
+}
+
+.charsheet .sheet-repetition select{
+  width : 90px;
+}
+
+.charsheet .sheet-repetition input[type="text"] {
+  width : 190px;
+
+}
+
+.charsheet .sheet-repetition input[type="number"] {
+  width: 50px;
+}
+
+
+.charsheet .sheet-pouvoir-esprit{
+	background:#BC9B6A;
+	border-bottom: 2px solid #BC9B6A;
+	color:#000000;
+}
+.charsheet .sheet-pouvoir-ame{
+	border-bottom: 2px solid #6793BA;
+	background:#6793BA;
+	color:#000000;
+}
+.charsheet .sheet-pouvoir-corps{
+	border-bottom: 2px solid #CA6D54;
+	background:#CA6D54;
+	color:#000000;
+}
+.charsheet .sheet-pouvoir-necrose{
+	border-bottom: 2px solid #000000;
+	background:#000000;
+	color:#ffffff;
+}
+
+
+.charsheet div.repcontrol{
+  display: inline-block;
+  width: 100%;
+}
+.charsheet .repcontrol_move{
+  height: 11px;
+  line-height: 11px;
+  margin-top: 4px;
+}
+.charsheet .repcontrol_del {
+  height: 22px;
+  line-height: 12px;
+  margin-top: 4px;
+  width: 30px;
+}
+.charsheet .repcontrol_add,.charsheet .repcontrol_edit {
+  color: transparent;
+  box-shadow: none;
+  background: transparent;
+  border-color: transparent;
+  text-shadow:none;
+  width: 100px;
+}
+.charsheet .repcontrol_add:focus,.charsheet .repcontrol_edit:focus {
+  outline: none;
+}
+.charsheet .repcontrol .repcontrol_edit:after {
+  content: 'y';
+  visibility: visible;
+  font-family: pictos;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 2px 4px 2px 4px;
+  color: rgba(177,121,63,0.7);
+}
+.charsheet .editmode ~ .repcontrol .repcontrol_edit:after {
+  content: '2';
+}
+.charsheet .repcontrol .repcontrol_add:before {
+  content: '+';
+  visibility: visible;
+  font-family: pictos;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 2px 4px 2px 4px;
+  color: rgba(177,121,63,0.7);
+}
+.charsheet .repcontrol .repcontrol_edit:hover:after,.charsheet .repcontrol .repcontrol_add:hover:before
+{
+  box-shadow: 1px 1px 4px 2px rgba(147,35,21,0.8);
+  border-color: #CF3134;
+  color: #CF3134;
+}
+.charsheet .repcontrol_add:focus:before,.charsheet .repcontrol_edit:focus:after {
+  color: #CF3134;
+}
+
+
+.charsheet button[type="roll"].sheet-rollbase {
+  color: #538079;
+  background: transparent;    
+  border: none;
+  border-radius: 0px;
+  font-size: 30pt;
+}
+
+.charsheet button[type="roll"].sheet-rollnecrose {
+  color: #000000;
+  background: transparent;    
+  border: none;
+  border-radius: 0px;
+  font-size: 30pt;
+}
+
+
+.sheet-rolltemplate-shaan-base table{
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    color: black;
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+}
+
+.sheet-rolltemplate-shaan-base th{
+  background-color:#538079;
+  margin: 5px;
+  padding: 3px;
+  color: #FFFFFF;
+  font-size: 102%;
+}
+
+.sheet-rolltemplate-shaan-base td{
+  margin: 5px;
+  padding: 3px;
+  background-color:#FFFFFF;
+  height: 35px;
+}
+.sheet-rolltemplate-shaan-base tr.sheet-de_ame{
+  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_ame{
+  color:#6793BA;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_ame_jet{
+  color:#6793BA;
+  background-color: transparent;
+  padding: 6px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;  
+}
+
+.sheet-rolltemplate-shaan-base tr.sheet-de_esprit{
+  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_esprit{
+  color:#BC9B6A;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_esprit_jet{
+  color:#BC9B6A;
+  background-color: transparent;
+  padding: 6px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;  
+}
+
+
+.sheet-rolltemplate-shaan-base tr.sheet-de_corps{
+  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_corps{
+  color:#CA6D54;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
+}
+
+.sheet-rolltemplate-shaan-base td.sheet-de_corps_jet{
+  color:#CA6D54;
+  background-color: transparent;
+  padding: 6px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;  
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult  {
+    background-color: #ffffff;
+    border: none;
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullcrit {
+  border: none;
+}
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullfail {
+  border: none;
+}
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.importantroll {
+  border: none;
+}
+
+
+
+.sheet-rolltemplate-shaan-necrose table{
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    color: ##000000;
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+}
+
+.sheet-rolltemplate-shaan-necrose th{
+  background-color:#538079;
+  margin: 5px;
+  padding: 3px;
+  color: #FFFFFF;
+  font-size: 102%;
+}
+
+.sheet-rolltemplate-shaan-necrose td{
+  margin: 5px;
+  padding: 3px;
+  background-color:#FFFFFF;
+  height: 35px;
+}
+
+.sheet-rolltemplate-shaan-necrose td.sheet-de_necrose{
+  color:#000000;
+  font-family: 'dicefontd10';
+  font-size: 400%;  
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult  {
+    background-color: #FFFFFF;
+    border: none;
+}
+
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullcrit {
+  border: none;
+}
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.fullfail {
+  border: none;
+}
+ 
+.sheet-rolltemplate-shaan-base .inlinerollresult.importantroll {
+  border: none;
+}
+
+.sheet-rolltemplate-shaan-pouvoir-esprit table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #967543;
+	border-bottom: 2px solid #BC9B6A;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-esprit th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;
+}
+.sheet-rolltemplate-shaan-pouvoir-esprit td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+.sheet-rolltemplate-shaan-pouvoir-ame table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #426d92;
+	border-bottom: 2px solid #6793BA;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-ame th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;	
+}
+.sheet-rolltemplate-shaan-pouvoir-ame td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+.sheet-rolltemplate-shaan-pouvoir-corps table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #a04932;
+	border-bottom: 2px solid #CA6D54;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-corps th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;	
+}
+.sheet-rolltemplate-shaan-pouvoir-corps td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+.sheet-rolltemplate-shaan-pouvoir-necrose table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:199px; width: 220px;
+    color: #000000;
+	border-bottom: 2px solid #000000;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-pouvoir-necrose th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;	
+}
+.sheet-rolltemplate-shaan-pouvoir-necrose td{
+	padding : 2px 0 0 15px;
+	text-align: center;
+	font-style: italic;
+}
+.sheet-rolltemplate-shaan-capacite-armimale table{
+    background-image : url('https://imgsrv.roll20.net//?src=https%3A%2F%2Fnsm07.casimages.com%2Fimg%2F2017%2F04%2F21%2F%2F1704211233136857314992598.jpg'); height:109px; width: 220px;
+    color: #0B6623;
+	border-bottom: 2px solid #0B6623;	
+    font-size: 1em;
+    font-family: cursive,'Times New Roman', Times, serif;
+	font-variant: small-caps;
+}
+.sheet-rolltemplate-shaan-capacite-armimale th{
+	padding : 2px 0 0 15px;
+	font-weight : normal;	
+}
+.sheet-rolltemplate-shaan-capacite-armimale td{
+	padding : 2px 0 0 0px;
+	text-align: center;
+	font-style: italic;
+}
+
+
+
+
