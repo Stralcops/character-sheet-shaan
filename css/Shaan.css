@@ -2699,6 +2699,21 @@
 	font-style: italic;
 }
 
+.reserve{
+  display: flex;
+}
 
+.reserve input {
+  width: 25px  !important; height: 25px  !important; margin: 0 30px 0 3px !important;
 
+}
+
+.specialisationLine {
+  display:flex
+}
+
+.specialisationLine input {
+  min-width: 35px;
+  height: 17px ! important;
+}
 

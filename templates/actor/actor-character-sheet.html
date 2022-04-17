@@ -1,111 +1,1805 @@
-<form id="shaan" class="{{cssClass}} {{actor.type}} main" autocomplete="off">
-<div class="charactersheet main" style="display: block;">
-  <!-- <input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="Domaines &amp; Spé" title="Domaines &amp; Spé"><span title="Domaines &amp; Spé"></span>
-      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab2" value="Pouvoirs" title="Pouvoirs"><span title="Pouvoirs"></span>
-      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab3" value="Magies" title="Magies">	<span title="Magies"></span>
-      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab4" value="Acquis" title="Acquis"><span title="Acquis"></span>
-      <input type="radio" name="attr_tab" class="sheet-tab sheet-tab5" value="Notes" title="Notes"><span title="Notes"></span>	 -->
+<form
+  style="overflow: scroll;"
+  id="shaan"
+  class="{{cssClass}} {{actor.type}} main"
+  autocomplete="off"
+>
+  <div class="charactersheet main" style="display: block;">
+    <div
+      class="sheet-tab-content charsheet"
+      style='background-image: url("https://imgsrv.roll20.net/?src=https%3A//nsm09.casimages.com/img/2019/01/17//1901171158446857316079960.jpg") ; height: 1060px ; width: 1500px ; background-repeat: no-repeat'
+    >
+      <div style="width: 750px; position:relative ">
+        <div style="margin: 0px 0px 0px 220px;">
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Nom Personnage"
+              style="margin: 19px 0px 0px 0px ; width: 340px ; height: 24px"
+              value="{{actor.name}}"
+            />
+          </div>
+          <div style="margin: 2px 0 0 0">
+            <select
+              name="data.race.value"
+              data-type="String"
+              style="width: 240px ; height: 24px"
+              value="{{data.race.value}}"
+            >
+              {{#select data.race.value}}
 
-  <div
-    class="sheet-tab-content"
-    style='background-image: url("https://imgsrv.roll20.net/?src=https%3A//nsm09.casimages.com/img/2019/01/17//1901171158446857316079960.jpg") ; height: 1060px ; width: 1500px ; background-repeat: no-repeat'
-  >
-    <div style="width: 750px">
-      <div style="margin: 0px 0px 0px 220px">
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Nom Personnage"
-            style="margin: 19px 0px 0px 0px ; width: 340px ; height: 24px"
-            value="{{actor.name}}"
-          />
+              <option value="">-- Race --</option>
+              <option value="Boreal">Boréal</option>
+              <option value="Darken">Darken</option>
+              <option value="Delhion">Delhion</option>
+              <option value="Felin">Felin</option>
+              <option value="Humain">Humain</option>
+              <option value="Kelwin">Kelwin</option>
+              <option value="Melodien">Mélodien</option>
+              <option value="Nomoi">Nomoï</option>
+              <option value="Woon">Woon</option>
+              <option value="Ygwan">Ygwan</option>
+              {{/select}}
+            </select>
+
+            <input
+              type="text"
+              name="data.age.value"
+              value="{{data.age.value}}"
+              data-dtype="Number"
+              style="width: 70px ; margin: -5px 0 0 45px ; height: 24px"
+            />
+          </div>
+          <div style="margin: -8px 0 0 0">
+            <select
+              name="data.peuple.value"
+              style="width: 180px ; height: 24px ; margin: 0 0 0 14px"
+              value="{{data.peuple.value}}"
+            >
+              {{#select data.peuple.value}}
+
+              <option value="">-- Peuple --</option>
+              <option value="Cites">Cités</option>
+              <option value="Forets_Blanches">Forêts Blanches</option>
+              <option value="Glaces">Glaces</option>
+              <option value="Grands_Arbres">Grands Arbres</option>
+              <option value="Hautes_Herbes">Hautes Herbes</option>
+              <option value="Marais">Marais</option>
+              <option value="Montagne">Montagne</option>
+              <option value="Rivages">Rivages</option>
+              <option value="Sables">Sables</option>
+              <option value="Terres_Brulees">Terres Brûlées</option>
+              {{/select}}
+            </select>
+            <input
+              type="text"
+              name="data.genre.value"
+              placeholder="Genre"
+              style="width: 120px ; height: 24px ; margin: -4px 0 0 45px"
+              value="{{data.genre.value}}"
+            />
+          </div>
+          <div>
+            <select
+              name="data.caste.value"
+              style="width: 130px ; height: 24px ; margin: 0 0 0 8px"
+              value="{{data.caste.value}}"
+            >
+              {{#select data.caste.value}}
+
+              <option value="">-- Caste --</option>
+              <option value="Artiste">Artiste</option>
+              <option value="Combattant">Combattant</option>
+              <option value="Elementaliste">Elémentaliste</option>
+              <option value="Erudit">Erudit</option>
+              <option value="Magicien">Magicien</option>
+              <option value="Negociant">Négociant</option>
+              <option value="Novateur">Novateur</option>
+              <option value="Ombre">Ombre</option>
+              <option value="Shaaniste">Shaaniste</option>
+              <option value="Voyageur">Voyageur</option>
+              {{/select}}
+            </select>
+            <input
+              type="text"
+              name="data.metier.value"
+              placeholder="Métier"
+              style="width: 155px ; margin: -5px 0 0 66px ; height: 24px"
+              value="{{data.metier.value}}"
+            />
+          </div>
         </div>
-        <div style="margin: 2px 0 0 0">
-          <select name="data.race.value" data-type="String" style="width: 240px ; height: 24px" value="{{data.race.value}}">
-            {{#select data.race.value}}
-         
-            <option value="">-- Race --</option>
-            <option value="Boreal">Boréal</option>
-            <option value="Darken">Darken</option>
-            <option value="Delhion">Delhion</option>
-            <option value="Felin">Felin</option>
-            <option value="Humain">Humain</option>
-            <option value="Kelwin">Kelwin</option>
-            <option value="Melodien">Mélodien</option>
-            <option value="Nomoi">Nomoï</option>
-            <option value="Woon">Woon</option>
-            <option value="Ygwan">Ygwan</option>
-        {{/select}}
+        <div
+          style="    margin: 160px 0 0 35px;
+      position: absolute;
+      top: -300px;
+      left: -63px;"
+        >
+          <div class="sheet-art-base">
+            <input
+              type="number"
+              class="sheet-ame-base"
+              data-i18n-title="arts_base"
+              title="[arts_base]"
+              name="data.stats.ame.arts.base"
+              value="{{data.stats.ame.arts.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-art">
+            <input
+              type="number"
+              class="sheet-ame"
+              title="[arts_actuel]"
+              name="data.stats.ame.arts.value"
+              value="{{data.stats.ame.arts.value}}"
+            />
+          </div>
+          <div class="sheet-shaan-base">
+            <input
+              type="number"
+              class="sheet-ame-base"
+              data-i18n-title="shaan_base"
+              title="[shaan_base]"
+              name="data.stats.ame.shaan.base"
+              value="{{data.stats.ame.shaan.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-shaan">
+            <input
+              type="number"
+              class="sheet-ame"
+              data-i18n-title="shaan_actuel"
+              title="[shaan_actuel]"
+              name="data.stats.ame.shaan.value"
+              value="{{data.stats.ame.shaan.value}}"
+            />
+          </div>
+          <div class="sheet-magie-base">
+            <input
+              type="number"
+              class="sheet-ame-base"
+              data-i18n-title="magie_base"
+              title="[magie_base]"
+              name="data.stats.ame.magie.base"
+              value="{{data.stats.ame.magie.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-magie">
+            <input
+              type="number"
+              class="sheet-ame"
+              data-i18n-title="magie_actuel"
+              title="[magie_actuel]"
+              name="data.stats.ame.magie.value"
+              value="{{data.stats.ame.magie.value}}"
+            />
+          </div>
+          <div class="sheet-ame-d">
+            <input
+              type="number"
+              class="sheet-ame-b"
+              data-i18n-title="ame"
+              title="[ame]"
+              name="data.stats.ame.value"
+              value="{{data.stats.ame.value}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-rituel-base">
+            <input
+              type="number"
+              class="sheet-corps-base"
+              data-i18n-title="rituels_base"
+              title="[rituels_base]"
+              name="data.stats.corps.rituels.base"
+              value="{{data.stats.corps.rituels.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-rituel">
+            <input
+              type="number"
+              class="sheet-corps"
+              data-i18n-title="rituels_actuel"
+              title="[rituels_actuel]"
+              name="data.stats.corps.rituels.value"
+              value="{{data.stats.corps.rituels.value}}"
+            />
+          </div>
+          <div class="sheet-survie-base">
+            <input
+              type="number"
+              class="sheet-corps-base"
+              data-i18n-title="survie_base"
+              title="[survie_base]"
+              name="data.stats.corps.survie.base"
+              value="{{data.stats.corps.survie.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-survie">
+            <input
+              type="number"
+              class="sheet-corps"
+              data-i18n-title="survie_actuel"
+              title="[survie_actuel]"
+              name="data.stats.corps.survie.value"
+              value="{{data.stats.corps.survie.value}}"
+            />
+          </div>
+          <div class="sheet-combat-base">
+            <input
+              type="number"
+              class="sheet-corps-base"
+              data-i18n-title="combat_base"
+              title="[combat_base]"
+              name="data.stats.corps.combat.base"
+              value="{{data.stats.corps.combat.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-combat">
+            <input
+              type="number"
+              class="sheet-corps"
+              data-i18n-title="combat_actuel"
+              title="[combat_actuel]"
+              name="data.stats.corps.combat.value"
+              value="{{data.stats.corps.combat.value}}"
+            />
+          </div>
+          <div class="sheet-corps-d">
+            <input
+              type="number"
+              class="sheet-corps-b"
+              data-i18n-title="corps"
+              title="[corps]"
+              name="data.stats.corps.value"
+              value="{{data.stats.corps.value}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-social-base">
+            <input
+              type="number"
+              class="sheet-esprit-base"
+              data-i18n-title="social_base"
+              title="[social_base]"
+              name="data.stats.esprit.social.base"
+              value="{{data.stats.esprit.social.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-social">
+            <input
+              type="number"
+              class="sheet-esprit"
+              data-i18n-title="social_actuel"
+              title="[social_actuel]"
+              name="data.stats.esprit.social.value"
+              value="{{data.stats.esprit.social.value}}"
+            />
+          </div>
+          <div class="sheet-savoir-base">
+            <input
+              type="number"
+              class="sheet-esprit-base"
+              data-i18n-title="savoir_base"
+              title="[savoir_base]"
+              name="data.stats.esprit.savoir.base"
+              value="{{data.stats.esprit.savoir.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-savoir">
+            <input
+              type="number"
+              class="sheet-esprit"
+              data-i18n-title="savoir_actuel"
+              title="[savoir_actuel]"
+              name="data.stats.esprit.savoir.value"
+              value="{{data.stats.esprit.savoir.value}}"
+            />
+          </div>
+          <div class="sheet-technique-base">
+            <input
+              type="number"
+              class="sheet-esprit-base"
+              data-i18n-title="technique_base"
+              title="[technique_base]"
+              name="data.stats.esprit.technique.base"
+              value="{{data.stats.esprit.technique.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-technique">
+            <input
+              type="number"
+              class="sheet-esprit"
+              data-i18n-title="technique_actuel"
+              title="[technique_actuel]"
+              name="data.stats.esprit.technique.value"
+              value="{{data.stats.esprit.technique.value}}"
+            />
+          </div>
+          <div class="sheet-esprit-d">
+            <input
+              type="number"
+              class="sheet-esprit-b"
+              data-i18n-title="esprit"
+              title="[esprit]"
+              name="data.stats.esprit.value"
+              value="{{data.stats.esprit.value}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-necrose-d-base">
+            <input
+              type="number"
+              class="sheet-necrose-base"
+              data-i18n-title="necrose_base"
+              title="[necrose_base]"
+              name="data.stats.necrose.base"
+              value="{{data.stats.necrose.base}}"
+              style="text-align: center"
+            />
+          </div>
+          <div class="sheet-necrose-d">
+            <input
+              type="number"
+              class="sheet-necrose"
+              data-i18n-title="necrose_actuel"
+              title="[necrose_actuel]"
+              name="data.stats.necrose.value"
+              value="{{data.stats.necrose.value}}"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 680px 0 0 94px;
+        width: 400px;
+        zoom: 88%;"
+        >
+          <div>
+            <input
+              type="text"
+              name="data.taille.value"
+              value="{{data.taille.value}}"
+              style="width: 50px ; height: 22px"
+              placeholder="Taille"
+            />
+            <input
+              type="text"
+              name="data.poids.value"
+              value="{{data.poids.value}}"
+              style="width: 33px ; height: 22px ; margin-left: 47px"
+              placeholder="Pds"
+            />
+          </div>
+          <div style="margin: 4px 0 0 17px">
+            <input
+              type="text"
+              name="data.gabarit.value"
+              value="{{data.gabarit.value}}"
+              style="width: 129px ; height: 22px"
+              placeholder="Gabarit"
+            />
+          </div>
+          <div style="margin: 0px 0 0 90px">
+            <input
+              type="text"
+              name="data.particularite.value"
+              value="{{data.particularite.value}}"
+              style="width: 255px ; height: 22px"
+              placeholder="Particularités"
+            />
+          </div>
+          <div style="margin: 4px 0 0 -57px">
+            <input
+              type="text"
+              name="data.particulariteSuite.value"
+              value="{{data.particulariteSuite.value}}"
+              style="width: 383px ; height: 22px"
+              placeholder="Particularités, suite"
+            />
+          </div>
+          <div style="margin: 0 0 0 105px">
+            <input
+              type="text"
+              name="data.elementPrimaire.value"
+              value="{{data.elementPrimaire.value}}"
+              style="width: 235px ; height: 22px"
+              placeholder=" Élément primaire"
+            />
+          </div>
+          <div style="margin: 4px 0 0 135px">
+            <input
+              type="text"
+              name="data.elementSecondaire.value"
+              value="{{data.elementSecondaire.value}}"
+              style="width: 211px ; height: 22px"
+              placeholder="Élément secondaire"
+            />
+          </div>
+          <div style="margin: 4px 0 0 85px">
+            <input
+              type="text"
+              name="data.temperament.value"
+              value="{{data.temperament.value}}"
+              style="width: 120px ; height: 22px"
+              placeholder="Tempérament"
+            />
+            <input
+              type="text"
+              name="data.culte.value"
+              value="{{data.culte.value}}"
+              style="width: 82px ; height: 22px ; margin: 0 0 0 55px"
+              placeholder="Culte"
+            />
+          </div>
+          <div style="margin: 4px 0 0 85px">
+            <input
+              type="text"
+              name="data.nomDuShaani.value"
+              value="{{data.nomDuShaani.value}}"
+              style="width: 255px ; height: 22px"
+              placeholder="Nom du Shaani"
+            />
+          </div>
+          <div style="margin: 4px 0 0 65px">
+            <input
+              type="text"
+              name="data.motivations.value"
+              value="{{data.motivations.value}}"
+              style="width: 272px ; height: 22px"
+              placeholder="Motivations"
+            />
+          </div>
+          <div style="margin: 4px 0 0 -57px">
+            <input
+              type="text"
+              name="data.motivationsSuite.value"
+              value="{{data.motivationsSuite.value}}"
+              style="width: 383px ; height: 22px"
+              placeholder="Motivations, suite"
+            />
+          </div>
+          <div style="margin: 45px 0 0 235px">
+            <input
+              type="text"
+              name="data.experience.value"
+              value="{{data.experience.value}}"
+              style="width: 49px ; height: 24px ; text-align: center"
+            />/
+            <input
+              type="text"
+              name="data.experience.base"
+              value="{{data.experience.base}}"
+              style="width: 48px ; height: 24px ; text-align: center"
+            />
+          </div>
+          <div
+            style="margin: -250px 0 0 612px ; width: 350px; position: absolute;
+          bottom: 0;
+          left: 81px;"
+          >
+            <div>
+              <input
+                type="number"
+                name="attr_ArmesHumainesPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ArmesHumainesPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_BiomorphiePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_BiomorphiePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_CauchemardPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_CauchemardPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_ContrebandePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ContrebandedPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_CorruptionPJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_CorruptionPJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_ExplosifsPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ExplosifsPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_FraudePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_FraudePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_HarcelementPJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_HarcelementPJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_LarcinPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_LarcinPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="attr_Pacte_NecrotiquePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_Pacte_NecrotiquePJ_Acquis"
+                style="width: 40px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div style="margin: -980px 0 0 826px">
+          <div class="reserve">
+            <input type="checkbox" name="data.reserve.un" {{checked data.reserve.un}} />
+            <input type="checkbox" name="data.reserve.deux" {{checked data.reserve.deux}} />
+            <input type="checkbox" name="data.reserve.trois" {{checked data.reserve.trois}} />
+            <input type="checkbox" name="data.reserve.quatre"  {{checked data.reserve.quatre}} />
+            <input type="checkbox" name="data.reserve.cinq" {{checked data.reserve.cinq}} />
+            <input type="checkbox" name="data.reserve.six" {{checked data.reserve.six}} />
+            <input type="checkbox" name="data.reserve.sept" {{checked data.reserve.sept}} />
+            <input type="checkbox" name="data.reserve.huit" {{checked data.reserve.huit}} />
+            <input type="checkbox" name="data.reserve.neuf" {{checked data.reserve.neuf}} />
+            <input type="checkbox" name="data.reserve.dix" {{checked data.reserve.dix}} />
+            <input type="checkbox" name="data.reserve.dixPlus" {{checked data.reserve.dixPlus}} />
+            <input type="checkbox" name="data.reserve.vingtsPlus" {{checked data.reserve.vingtsPlus}} />
+          </div>
+          <div style="margin: 111px 0 0 42px">
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="data.stats.esprit.technique.skills.engrenages.bonus"
+                value="{{data.stats.esprit.technique.skills.engrenages.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                
+              />
+              <input
+                type="number"
+                name="data.stats.esprit.technique.skills.engrenages.acquis"
+                value="{{data.stats.esprit.technique.skills.engrenages.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.artsAppliques.bonus"
+                value="{{data.stats.ame.arts.skills.artAppliques.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
 
-          </select>
-         
-          <input type="text" name="data.age.value" value="{{data.age.value}}" data-dtype="Number"
-          style="width: 70px ; margin: -5px 0 0 45px ; height: 24px"
-          />
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.artsAppliques.acquis"
+                value="{{data.stats.ame.arts.skills.artAppliques.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                
+              />
+              <input
+                type="number"
+                name="data.stats.corps.rituels.skills.ritesArts.bonus"
+                value="{{data.stats.corps.rituels.skills.ritesArts.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.corps.rituels.skills.ritesArts.acquis"
+                value="{{data.stats.corps.rituels.skills.ritesArts.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_PilotagePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_PilotagePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.artsDuFeu.bonus"
+                value="{{data.stats.ame.arts.skills.artsDuFeu.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.artsDuFeu.acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="{{data.stats.ame.arts.skills.artsDuFeu.acquis}}"
+              />
+              <input
+                type="number"
+                name="attr_RitesCombatPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesCombatPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_RécupérationPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RécupérationPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.chant.bonus"
+                value="{{data.stats.ame.arts.skills.chant.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.chant.acquis"
+                value="{{data.stats.ame.arts.skills.chant.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_RitesAnimalPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesAnimalPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_SensPierrePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_SensPierredPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.comedie.bonus"
+                value="{{data.stats.ame.arts.skills.comedie.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.comedie.acquis"
+                value="{{data.stats.ame.arts.skills.comedie.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
 
+              />
+              <input
+                type="number"
+                name="attr_RitesMagiePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesMagiePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_SensBoisPJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_SensBoisPJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.deguisement.bonus"
+                value="{{data.stats.ame.arts.skills.deguisement.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.deguisement.acquis"
+                value="{{data.stats.ame.arts.skills.deguisement.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+
+              />
+              <input
+                type="number"
+                name="attr_RitesNecrosePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesNecrosePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_SensCuirPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_SensCuirPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.gastronomie.bonus"
+                value="{{data.stats.ame.arts.skills.gastronomie.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.gastronomie.acquis"
+                value="{{data.stats.ame.arts.skills.gastronomie.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+
+              />
+              <input
+                type="number"
+                name="attr_RitesSavoirPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesSavoirPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_SensMetalPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_SensMetalPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.langageDuCorps.bonus"
+                value="{{data.stats.ame.arts.skills.langageDuCorps.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.langageDuCorps.acquis"
+                value="{{data.stats.ame.arts.skills.langageDuCorps.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_RitesShaanPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesShaanPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_SensTissuPJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_SensTissuPJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.lettres.bonus"
+                value="{{data.stats.ame.arts.skills.lettres.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.lettres.acquis"
+                value="{{data.stats.ame.arts.skills.lettres.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_RitesSocialPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesSocialPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_SensVerrePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_SensVerrePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.musique.bonus"
+                value="{{data.stats.ame.arts.skills.musique.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.musique.acquis"
+                value="{{data.stats.ame.arts.skills.musique.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_RitesSurviePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesSurviePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_TechnologiePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_TechnologiePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.trucages.bonus"
+                value="{{data.stats.ame.arts.skills.trucages.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.arts.skills.trucages.acquis"
+                value="{{data.stats.ame.arts.skills.trucages.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_RitesTechniquePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_RitesTechniquePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+          </div>
+          <div style="margin: 70px 0 0 42px">
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_AlchimiePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_AlchimiePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.embiose.bonus"
+                value="{{data.stats.ame.shaan.skills.embiose.bonus}}" 
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.embiose.acquis"
+                value="{{data.stats.ame.shaan.skills.embiose.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_AcrobatiePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_AcrobatiePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_BibliothequePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_BibliothequePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.emapthieAnimale.bonus"
+                value="{{data.stats.ame.shaan.skills.emapthieAnimale.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.empathieAnimale.acquis"
+                value="{{data.stats.ame.shaan.skills.empathieAnimale.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_CaravanePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_CaravanePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_BotaniquePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_BotaniquePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.empathieAntheenne.bonus"
+                value="{{data.stats.ame.shaan.skills.empathieAntheenne.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.empathieAntheenne.acquis"
+                value="{{data.stats.ame.shaan.skills.empathieAntheenne.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_CultureHeossiennePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_CultureHeossiennePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_CultureHumainePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_CultureHumainePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.empathieMinerale.bonus"
+                value="{{data.stats.ame.shaan.skills.empathieMinerale.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.empathieMinerale.acquis"
+                value="{{data.stats.ame.shaan.skills.empathieMinerale.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_CultureNecrosiennePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_CultureNecrosiennePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_EsoterismePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_EsoterismePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.empathieVegetale.bonus"
+                value="{{data.stats.ame.shaan.skills.empathieVegetale.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.empathieVegetale.acquis"
+                value="{{data.stats.ame.shaan.skills.empathieVegetale.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_DiscretionPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_DiscretionPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_GeologiePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_GeologiePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.intuition.bonus"
+                value="{{data.stats.ame.shaan.skills.intuition.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.intuition.acquis"
+                value="{{data.stats.ame.shaan.skills.intuition.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
           
-        </div>
-        <div style="margin: -8px 0 0 0">
-          <select
-            name="data.peuple.value"
-            style="width: 180px ; height: 24px ; margin: 0 0 0 14px"
-            value="{{data.peuple.value}}"
-          >
-          {{#select data.peuple.value}}
-
-            <option value="">-- Peuple --</option>
-            <option value="Cites">Cités</option>
-            <option value="Forets_Blanches">Forêts Blanches</option>
-            <option value="Glaces">Glaces</option>
-            <option value="Grands_Arbres">Grands Arbres</option>
-            <option value="Hautes_Herbes">Hautes Herbes</option>
-            <option value="Marais">Marais</option>
-            <option value="Montagne">Montagne</option>
-            <option value="Rivages">Rivages</option>
-            <option value="Sables">Sables</option>
-            <option value="Terres_Brulees">Terres Brûlées</option>
-            {{/select}}
-          </select>
-          <input
-            type="text"
-            name="data.genre.value"
-            placeholder="Genre"
-            style="width: 120px ; height: 24px ; margin: -4px 0 0 45px"
-            value="{{data.genre.value}}"
-          />
-        </div>
-        <div>
-          <select
-            name="data.caste.value"
-            style="width: 130px ; height: 24px ; margin: 0 0 0 8px"
-            value="{{data.caste.value}}"
-          >
-          {{#select data.caste.value}}
-
-            <option value="">-- Caste --</option>
-            <option value="Artiste">Artiste</option>
-            <option value="Combattant">Combattant</option>
-            <option value="Elementaliste">Elémentaliste</option>
-            <option value="Erudit">Erudit</option>
-            <option value="Magicien">Magicien</option>
-            <option value="Negociant">Négociant</option>
-            <option value="Novateur">Novateur</option>
-            <option value="Ombre">Ombre</option>
-            <option value="Shaaniste">Shaaniste</option>
-            <option value="Voyageur">Voyageur</option>
-            {{/select}}
-          </select>
-          <input
-            type="text"
-            name="data.metier.value"
-            placeholder="Métier"
-            style="width: 155px ; margin: -5px 0 0 66px ; height: 24px"
-            value="{{data.metier.value}}"
-          />
+              />
+              <input
+                type="number"
+                name="attr_EducationPhysiquePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_EducationPhysiquePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_HistoireHeosPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_HistoireHeosPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.reve.bonus"
+                value="{{data.stats.ame.shaan.skills.reve.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.reve.acquis"
+                value="{{data.stats.ame.shaan.skills.reve.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_MonturePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_MonturePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_MedecinePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_MedecinePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.soinsAme.bonus"
+                value="{{data.stats.ame.shaan.skills.soinsAme.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.soinsAme.acquis"
+                value="{{data.stats.ame.shaan.skills.soinsAme.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_NavigationPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_NavigationPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_ProtocolesPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ProtocolesPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.soinsEsprit.bonus"
+                value="{{data.stats.ame.shaan.skills.soinsEsprit.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.soinsEsprit.acquis"
+                value="{{data.stats.ame.shaan.skills.soinsEsprit.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_VieSauvagePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_VieSauvagePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_ZoologiePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ZoologiePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.soinsCorps.bonus"
+                value="{{data.stats.ame.shaan.skills.soinsCorps.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.shaan.skills.soinsCorps.acquis"
+                value="{{data.stats.ame.shaan.skills.soinsCorps.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_VigilancePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_VigilancePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+          </div>
+          <div style="margin: 70px 0 0 42px">
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_ArpegePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ArpegePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.arcanes.bonus"
+                value="{{data.stats.ame.magie.skills.arcanes.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.arcanes.acquis"
+                value="{{data.stats.ame.magie.skills.arcanes.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_ArmesProjectilesPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ArmesProjectilesPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_BluffPJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_BluffPJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.conjuration.bonus"
+                value="{{data.stats.ame.magie.skills.conjuration.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.conjuration.acquis"
+                value="{{data.stats.ame.magie.skills.conjuration.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_ArmesMeleePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ArmesMeleePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_CommercePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_CommercePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.defenseMagique.bonus"
+                value="{{data.stats.ame.magie.skills.defenseMagique.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.defenseMagique.acquis"
+                value="{{data.stats.ame.magie.skills.defenseMagique.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_ArmesLanceesPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ArmesLanceesPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_DiplomatiePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_DiplomatiePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.enchantement.bonus"
+                value="{{data.stats.ame.magie.skills.enchantement.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.enchantement.acquis"
+                value="{{data.stats.ame.magie.skills.enchantement.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_ArmimalesPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ArmimalesPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_EnseignementPJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_EnseignementPJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.incandescence.bonus"
+                value="{{data.stats.ame.magie.skills.incandescence.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.incandescence.acquis"
+                value="{{data.stats.ame.magie.skills.incandescence.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_EnginsGuerrePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_EnginsGuerrePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_LangagePrimalPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_LagagePrimalPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.invocation.bonus"
+                value="{{data.stats.ame.magie.skills.invocation.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.invocation.acquis"
+                value="{{data.stats.ame.magie.skills.invocation.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_EsquivePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_EsquivePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_LanguesExotiquesPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_LanguesExotiquesPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.maitriseDesSchemes.bonus"
+                value="{{data.stats.ame.magie.skills.maitriseDesSchemes.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.maitriseDesSchemes.acquis"
+                value="{{data.stats.ame.magie.skills.maitriseDesSchemes.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_ForcerPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_ForcerPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_PsychologiePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_PsychologiePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.regeneration.bonus"
+                value="{{data.stats.ame.magie.skills.regeneration.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.regeneration.acquis"
+                value="{{data.stats.ame.magie.skills.regeneration.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_IntimidationPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_IntimidationPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_SeductionPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_SeductionPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.transfert.bonus"
+                value="{{data.stats.ame.magie.skills.transfert.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.transfert.acquis"
+                value="{{data.stats.ame.magie.skills.transfert.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_PugilatPJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_PugilatPJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+            <div class="specialisationLine">
+              <input
+                type="number"
+                name="attr_VieUrbainePJ_Bonus"
+                style="width: 40px ; margin: 2px 0 0 0px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_VieUrbainePJ_Acquis"
+                style="width: 40px ; margin: 2px 0 0 1px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.voile.bonus"
+                value="{{data.stats.ame.magie.skills.voile.bonus}}"
+                style="width: 40px ; margin: 1px 0 0 169px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="data.stats.ame.magie.skills.voile.acquis"
+                value="{{data.stats.ame.magie.skills.voile.acquis}}"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+              />
+              <input
+                type="number"
+                name="attr_StrategiePJ_Bonus"
+                style="width: 40px ; margin: 1px 0 0 168px ; height: 20px ; text-align: center"
+                value="0"
+              />
+              <input
+                type="number"
+                name="attr_StrategiePJ_Acquis"
+                style="width: 40px ; margin: 1px 0 0 2px ; height: 20px ; text-align: center"
+                value="0"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    
+    </div>
   </div>
-</div>
 </form>

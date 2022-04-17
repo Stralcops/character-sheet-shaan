@@ -38,6 +38,7 @@ export class ShaanActorSheet extends ActorSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.data = actorData.data;
     context.flags = actorData.flags;
+    console.group('actorData =>', actorData)
 
     // Prepare character data and items.
     if (actorData.type == 'character') {

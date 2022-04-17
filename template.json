@@ -1,268 +1,777 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types"    : ["character", "npc"],
     "templates": {
       "base": {
-        "race": { "value": "" },
-        "peuple": { "value": "" },
-        "caste": { "value": "" },
-        "metier": { "value": "" },
-        "age": { "value": 0 },
-        "sexe": { "value": "" },
-
+        "race"              : { "value": "" },
+        "peuple"            : { "value": "" },
+        "caste"             : { "value": "" },
+        "metier"            : { "value": "" },
+        "age"               : { "value": 0 },
+        "sexe"              : { "value": "" },
+        "taille"            : { "value": 0 },
+        "poids"             : { "value": 0 },
+        "gabarit"           : { "value": "" },
+        "particularite"     : { "value": "" },
+        "particulariteSuite": { "value": "" },
+        "elementPrimaire"   : { "value": "" },
+        "elementSecondaire" : { "value": "" },
+        "temperament"       : { "value": "" },
+        "culte"             : { "value": "" },
+        "nomDuShaani"       : { "value": "" },
+        "motivations"       : { "value": "" },
+        "motivationsSuite"  : { "value": "" },
+        "experience"        : { "value": 0, "base": 0 },
+        "reserve"           : {
+          "un"        : false,
+          "deux"      : false,
+          "trois"     : false,
+          "quatre"    : false,
+          "cinq"      : false,
+          "six"       : false,
+          "sept"      : false,
+          "huit"      : false,
+          "neuf"      : false,
+          "dix"       : false,
+          "dixPlus"   : false,
+          "vingtsPlus": false
+        },
         "health": {
           "value": 10,
-          "min": 0,
-          "max": 10
+          "min"  : 0,
+          "max"  : 10
         },
         "power": {
           "value": 5,
-          "min": 0,
-          "max": 5
+          "min"  : 0,
+          "max"  : 5
         },
         "biography": "",
-        "stats": {
+        "stats"    : {
           "ame": {
-            "arts": {
-              "value": 0,
-              "min": 0,
-              "max": 0
+            "value": 0,
+            "arts" : {
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Arts",
+              "skills": {
+                "artsAppliques": {
+                  "label" : "Arts appliqués",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "artsDuFeu": {
+                  "label" : "Arts du feu",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "chant": {
+                  "label" : "Chant",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "comedie": {
+                  "label" : "Comédie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "deguisement": {
+                  "label" : "Déguisement",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "gastronomie": {
+                  "label" : "Gastronomie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "langageDuCorps": {
+                  "label" : "Langage du corps",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "lettres": {
+                  "label" : "Lettres",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "musique": {
+                  "label" : "Musique",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "trucages": {
+                  "label" : "Trucages",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                }
+              }
             },
             "shaan": {
-              "value": 0,
-              "min": 0,
-              "max": 0
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Shaan",
+              "skills": {
+                "embiose": {
+                  "label" : "Embiose",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "empathieAnimale": {
+                  "label" : "Empathie animale",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "empathieAnteenne": {
+                  "label" : "Empathie anthéenne",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "empathieMinerale": {
+                  "label" : "Empathie minérale",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "empathieVegetale": {
+                  "label" : "Empathie végétale",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "intuition": {
+                  "label" : "Intuition",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "reve": {
+                  "label" : "Rêve",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "soinsAme": {
+                  "label" : "Soins de l'ame",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "soinsEsprit": {
+                  "label" : "Soins de l'esprit",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "soinsCorps": {
+                  "label" : "Soins du corps",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                }
+              }
             },
             "magie": {
-              "value": 0,
-              "min": 0,
-              "max": 0
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Magie",
+              "skills": {
+                "arcanes": {
+                  "label" : "Arcanes",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "conjuration": {
+                  "label" : "Conjuration",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "defenseMagique": {
+                  "label" : "Défense magique",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "enchantement": {
+                  "label" : "Enchantement",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "incandescence": {
+                  "label" : "Incandescence",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "invocation": {
+                  "label" : "Invocation",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "maitriseDesSchemes": {
+                  "label" : "Maîtrise des Schèmes",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "regeneration": {
+                  "label" : "Régénération",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "transfert": {
+                  "label" : "Transfert",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "voile": {
+                  "label" : "Voile",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                }
+              }
             }
           },
           "corps": {
+            "value" : 0,
             "combat": {
-              "value": 0,
-              "min": 0,
-              "max": 0
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Combat",
+              "skills": {
+                "armesProjectiles": {
+                  "label" : "Armes de projectiles",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "armesMelee": {
+                  "label" : "Armes de mêlée",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "armesLancees": {
+                  "label" : "Armes lancées",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "armimales": {
+                  "label" : "Armimales",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "enginsDeGuerre": {
+                  "label" : "Engins de guerre",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "esquive": {
+                  "label" : "Esquive",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "forcer": {
+                  "label" : "Forcer",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "intimidation": {
+                  "label" : "Intimidation",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "pugilat": {
+                  "label" : "Pugilat",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "strategie": {
+                  "label" : "Stratégie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                }
+              }
             },
             "survie": {
-              "value": 0,
-              "min": 0,
-              "max": 0
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Survie",
+              "skills": {
+                "acrobatie": {
+                  "label" : "Acrobatie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "caravane": {
+                  "label" : "Caravane",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "cultureHeossienne": {
+                  "label" : "Culture héossienne",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "cultureNecrosienne": {
+                  "label" : "Culture nécrosienne",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "discretion": {
+                  "label" : "Discrétion",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "educationPhysique": {
+                  "label" : "Education physique",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "monture": {
+                  "label" : "Monture",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "navigation": {
+                  "label" : "Navigation",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "vieSauvage": {
+                  "label" : "Vie sauvage",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "vigilance": {
+                  "label" : "Vigilance",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                }
+              }
             },
-            "rituel": {
-              "value": 0,
-              "min": 0,
-              "max": 0
+            "rituels": {
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Rituels",
+              "skills": {
+                "ritesArts": {
+                  "label" : "Rites d'Arts",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesCombat": {
+                  "label" : "Rites de Combat",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesAnimal": {
+                  "label" : "Rites de l'Animal",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesMagie": {
+                  "label" : "Rites de la Magie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesNecrose": {
+                  "label" : "Rites de la Necrose",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesSavoir": {
+                  "label" : "Rites de Savoir",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesShaan": {
+                  "label" : "Rites de Shaan",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesSocial": {
+                  "label" : "Rites de la Social",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesSurvie": {
+                  "label" : "Rites de la Survie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                },
+                "ritesTechnique": {
+                  "label" : "Rites de la Technique",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
+                }
+              }
             }
           },
           "esprit": {
-            "color": "#bc9a69",
+            "value" : 0,
+            "color" : "#bc9a69",
             "savoir": {
               "value": 0,
-              "min": 0,
-              "max": 0,
+              "base" : 0,
+              "min"  : 0,
+              "max"  : 0,
               "label": "Savoir",
 
               "skills": {
                 "alchimie": {
-                  "label": "Alchimie",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Alchimie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "bibliotheque": {
-                  "label": "Bibliothèque",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Bibliothèque",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "botanique": {
-                  "label": "Botaïque",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Botanique",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "cultureHumaine": {
-                  "label": "Culture humaine",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Culture humaine",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "esoterisme": {
-                  "label": "Esoterisme",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Esoterisme",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "geologie": {
-                  "label": "Géologie",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Géologie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "histoireDheos": {
-                  "label": "Histoire d'Héos",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Histoire d'Héos",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "medecine": {
-                  "label": "Médecine",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Médecine",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "protocoles": {
-                  "label": "Protocoles",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Protocoles",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "zoologie": {
-                  "label": "Zoologie",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Zoologie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 }
               }
             },
             "technique": {
-              "value": 0,
-              "min": 0,
-              "max": 0,
-              "label": "Technique",
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Technique",
               "skills": {
                 "engrenages": {
-                  "label": "Engrenange",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Engrenange",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "pilotage": {
-                  "label": "Pilotage",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Pilotage",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "recuperation": {
-                  "label": "Recuperation",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Recuperation",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "sensDeLaPierre": {
-                  "label": "Sens de la pierre",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Sens de la pierre",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "sensDuBois": {
-                  "label": "Sens du bois",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Sens du bois",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "sensDuCuir": {
-                  "label": "Sens du cuir",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Sens du cuir",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "sensDuMetal": {
-                  "label": "Sens du métal",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Sens du métal",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "sensDuVerre": {
-                  "label": "Sens du verre",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Sens du verre",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "technologie": {
-                  "label": "Technologie",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Technologie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 }
               }
             },
             "social": {
-              "value": 0,
-              "min": 0,
-              "max": 0,
-              "label": "Social",
+              "value" : 0,
+              "base"  : 0,
+              "min"   : 0,
+              "max"   : 0,
+              "label" : "Social",
               "skills": {
                 "arpege": {
-                  "label": "Arpège",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Arpège",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "bluff": {
-                  "label": "Bluff",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Bluff",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "commerce": {
-                  "label": "Commerce",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Commerce",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "diplomatie": {
-                  "label": "Diplomatie",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Diplomatie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "enseignement": {
-                  "label": "Enseignement",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Enseignement",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "langagePrimal": {
-                  "label": "Langage primaire",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Langage primaire",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "languesExotiques": {
-                  "label": "Langues exotiques",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Langues exotiques",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "psychologie": {
-                  "label": "Psychologie",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Psychologie",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "seduction": {
-                  "label": "Séduction",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Séduction",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 },
                 "vieUrbaine": {
-                  "label": "Vie urbaine",
-                  "value": 0,
-                  "min": 0,
-                  "max": 0
+                  "label" : "Vie urbaine",
+                  "bonus" : 0,
+                  "acquis": 0,
+                  "min"   : 0,
+                  "max"   : 0
                 }
               }
             }
+          },
+          "necrose": {
+            "base" : 0,
+            "value": 0
           }
         }
       }
     },
     "character": {
-      "templates": ["base"],
+      "templates" : ["base"],
       "attributes": {
         "level": {
           "value": 1
@@ -271,10 +780,10 @@
     },
     "npc": {
       "templates": ["base"],
-      "cr": 0
+      "cr"       : 0
     },
     "Item": {
-      "types": ["item", "feature"],
+      "types"    : ["item", "feature"],
       "templates": {
         "base": {
           "description": ""
@@ -282,9 +791,9 @@
       },
       "item": {
         "templates": ["base"],
-        "quantity": 1,
-        "weight": 0,
-        "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+        "quantity" : 1,
+        "weight"   : 0,
+        "formula"  : "d20 + @str.mod + ceil(@lvl / 2)"
       },
       "feature": {
         "templates": ["base"]
